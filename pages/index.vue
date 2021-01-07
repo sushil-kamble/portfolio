@@ -1,4 +1,5 @@
 <template>
+  <!-- 1263 breakage -->
   <v-container>
     <Hero />
     <About />

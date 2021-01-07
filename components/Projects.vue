@@ -2,41 +2,49 @@
   <section class="px-4 mt-15">
     <h1 class="goldman primary--text my-head-font">Projects</h1>
     <v-divider class="primary"></v-divider>
-    <v-card class="mt-6 px-4" flat>
-      <v-hover>
-        <template v-slot:default="{ hover }">
-          <v-card class="mx-auto" max-width="344">
-            <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/forest-art.jpg"
-            ></v-img>
+    <div class="px-4">
+      <v-card class="mt-6 d-flex justify-space-between" flat>
+        <v-hover v-for="n in 3" :key="n">
+          <template v-slot:default="{ hover }">
+            <v-card max-width="320" height="400">
+              <v-img
+                src="https://images.pexels.com/photos/2312369/pexels-photo-2312369.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                height="330"
+              ></v-img>
+              <h1 class="text-center goldman">Web app</h1>
+              <h4 class="text-center font-weight-light">Short Description</h4>
 
-            <v-card-text>
-              <h2 class="title primary--text">Magento Forests</h2>
-              Travel to the best outdoor experience on planet Earth. A vacation
-              you will never forget!
-            </v-card-text>
-
-            <v-card-title>
-              <v-rating
-                :value="4"
-                dense
-                color="orange"
-                background-color="orange"
-                hover
-                class="mr-2"
-              ></v-rating>
-              <span class="primary--text subtitle-2">64 Reviews</span>
-            </v-card-title>
-
-            <v-fade-transition>
-              <v-overlay v-if="hover" absolute color="#036358">
-                <v-btn>See more info</v-btn>
-              </v-overlay>
-            </v-fade-transition>
-          </v-card>
-        </template>
-      </v-hover>
-    </v-card>
+              <v-fade-transition>
+                <v-overlay v-if="hover" absolute color="primary" opacity="0.8">
+                  <div class="px-2">
+                    <h1 class="goldman">Title</h1>
+                    <v-divider class="white"></v-divider>
+                    <p class="px-1 py-2">
+                      This is awesome Lorem, ipsum dolor sit amet consectetur
+                      adipisicing elit. Quasi illum pariatur eius aliquam totam
+                      laudantium provident laborum debitis vitae maxime harum
+                      facilis, deleniti similique delectus dolores explicabo,
+                      nostrum soluta voluptate.
+                    </p>
+                    <v-btn block color="secondary">Visit website</v-btn>
+                  </div>
+                </v-overlay>
+              </v-fade-transition>
+            </v-card>
+          </template>
+        </v-hover>
+      </v-card>
+      <v-btn
+        large
+        block
+        color="primary"
+        class="mt-4 goldman"
+        outlined
+        to="/projects"
+      >
+        My Projects
+      </v-btn>
+    </div>
   </section>
 </template>
 

@@ -16,7 +16,7 @@
       <v-btn text to="/" nuxt color="primary">
         <span class="black--text">Home</span>
       </v-btn>
-      <v-btn text nuxt color="primary">
+      <v-btn text nuxt to="/skills" color="primary">
         <span class="black--text">Skills</span>
       </v-btn>
       <v-btn text to="/projects" nuxt color="primary">

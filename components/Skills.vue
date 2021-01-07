@@ -30,6 +30,16 @@
           </v-card>
         </v-col>
       </v-row>
+      <v-btn
+        large
+        block
+        color="primary"
+        class="mt-3 goldman"
+        outlined
+        to="/skills"
+      >
+        My Skills
+      </v-btn>
     </v-card>
   </section>
 </template>
