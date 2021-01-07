@@ -1,6 +1,7 @@
 <template>
-  <v-app dark id="main--app">
-    <h1 class="text-center">App Bar</h1>
+  <v-app id="main--app">
+    <!-- Change everything at 960 -->
+    <Navbar />
     <v-divider></v-divider>
     <v-main>
       <v-container fluid>

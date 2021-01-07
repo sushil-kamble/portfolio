@@ -25,7 +25,11 @@ export default {
       },
       {
         href:
-          'https://fonts.googleapis.com/css2?family=Goldman&family=PT+Serif&display=swap',
+          'https://fonts.googleapis.com/css2?family=Goldman&family=Roboto+Serif&display=swap',
+        rel: 'stylesheet',
+      },
+      {
+        href: 'https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css',
         rel: 'stylesheet',
       },
     ],
@@ -61,7 +65,7 @@ export default {
           error: colors.red.accent3,
         },
         dark: {
-          primary: colors.blue.darken2,
+          primary: colors.yellow.accent2,
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,

@@ -5,4 +5,5 @@
       <v-btn block nuxt class="mt-5" to="/">Main Page</v-btn>
     </div>
   </v-card>
+  <!-- yzEOTtukOtY3mdYe -->
 </template>
