@@ -39,6 +39,7 @@
             <v-img
               :aspect-ratio="8 / 7"
               max-height="360"
+              :lazy-src="`https://drive.google.com/uc?export=view&id=${skillImgMin}`"
               :src="`https://drive.google.com/uc?export=view&id=${skillImg}`"
             ></v-img>
           </v-card>
@@ -63,6 +64,7 @@ export default {
   data() {
     return {
       skillImg: '1sXGoYAzprv9FNmUO1LgFYwk9ibhAtC7S',
+      skillImgMin: '1od9XCRaVjYqv8W1RfrOqkzcYqxFR76Mm',
       skills: [
         {
           id: 1,

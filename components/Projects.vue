@@ -1,8 +1,8 @@
 <template>
-  <section class="px-4 mt-15">
+  <section :class="$vuetify.breakpoint.smAndUp ? 'px-4 mt-15' : 'mt-10'">
     <h1 class="goldman primary--text my-head-font">Projects</h1>
     <v-divider class="primary"></v-divider>
-    <div class="px-4">
+    <div :class="`${$vuetify.breakpoint.smAndUp && 'px-4'}`">
       <v-card class="mt-6" flat>
         <v-row>
           <v-col v-for="n in 3" :key="n" cols="12" md="4">
