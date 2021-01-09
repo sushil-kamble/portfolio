@@ -1,10 +1,14 @@
 <template>
   <v-row class="px-4">
     <v-col md="6">
-      <v-card height="670" class="hero-one" flat>
-        <div>
+      <v-card
+        :height="$vuetify.breakpoint.smAndDown ? 500 : 650"
+        class="hero-one"
+        flat
+      >
+        <div :class="`${$vuetify.breakpoint.smAndDown && 'text-center'}`">
           <h4 class="goldman text-uppercase text--secondary">hey there</h4>
-          <h1 class="goldman cos-name">
+          <h1 :class="`goldman ${$vuetify.breakpoint.mdAndUp && 'cos-name'}`">
             I am <span class="primary--text">Sushil</span>
           </h1>
           <h1 class="goldman">I am a WebApp Developer</h1>
@@ -15,7 +19,11 @@
         </div>
       </v-card>
     </v-col>
-    <v-col md="6" class="hero-two d-flex justify-end">
+    <v-col
+      md="6"
+      class="hero-two d-flex justify-end"
+      v-if="$vuetify.breakpoint.mdAndUp"
+    >
       <img src="~/assets/img/hero2.svg" height="380" />
     </v-col>
   </v-row>

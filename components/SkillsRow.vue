@@ -9,13 +9,10 @@
         <v-col sm="10" cols="12">
           <v-card class="pa-1" flat>
             <v-card-title>{{ val.name }}</v-card-title>
-            <v-card-text
+            <v-card-text class="font-details"
               >Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
               suscipit ab mollitia molestiae eos error aut officia excepturi
-              architecto velit. Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Nostrum quisquam voluptas labore dicta quia
-              ipsum iste culpa officia, qui praesentium repellendus voluptate
-              facilis magni provident numquam beatae voluptatem sed saepe?
+              architecto velit.
             </v-card-text>
           </v-card>
         </v-col>
@@ -37,5 +34,8 @@ export default {
 }
 .my-skill-icon {
   font-size: 120px;
+}
+.font-details {
+  font-size: 20px;
 }
 </style>

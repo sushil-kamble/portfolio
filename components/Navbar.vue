@@ -6,13 +6,15 @@
     height="70"
     flat
   >
-    <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
-
     <v-toolbar-title class="goldman">Sushil</v-toolbar-title>
 
     <v-spacer></v-spacer>
 
-    <div>
+    <v-app-bar-nav-icon
+      v-if="$vuetify.breakpoint.smAndDown"
+    ></v-app-bar-nav-icon>
+
+    <div v-else>
       <v-btn text to="/" nuxt color="primary">
         <span class="black--text">Home</span>
       </v-btn>
@@ -22,12 +24,14 @@
       <v-btn text to="/projects" nuxt color="primary">
         <span class="black--text">Projects</span>
       </v-btn>
-      <v-btn text nuxt color="primary">
+      <v-btn text nuxt to="/contact" color="primary">
         <span class="black--text">Contact</span>
       </v-btn>
     </div>
   </v-app-bar>
 </template>
+
+
 
 <style scoped>
 .border--bottom {

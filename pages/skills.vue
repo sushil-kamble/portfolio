@@ -92,8 +92,14 @@ export default {
         },
         {
           id: 2,
-          name: 'Data Structures',
+          name: 'Data Structures and Algorithms',
           icon: 'bx bxs-data',
+          per: 75,
+        },
+        {
+          id: 3,
+          name: 'Dev Ops',
+          icon: 'bx bxl-kubernetes',
           per: 75,
         },
       ],

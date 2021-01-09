@@ -1,11 +1,21 @@
 <template>
-  <section class="px-4 mt-15">
-    <h1 class="goldman primary--text my-head-font">Skills</h1>
+  <section :class="$vuetify.breakpoint.smAndUp ? 'px-4 mt-15' : 'mt-10'">
+    <h1
+      :class="`goldman primary--text my-head-font ${
+        $vuetify.breakpoint.smAndDown && 'text-center'
+      }`"
+    >
+      Skills
+    </h1>
     <v-divider class="primary"></v-divider>
-    <v-card class="mt-6 px-4" flat>
-      <v-row>
-        <v-col md="6" class="hero-two">
-          <h4 class="mb-4">
+    <v-card :class="$vuetify.breakpoint.smAndUp ? 'mt-6 px-4' : 'mt-6'" flat>
+      <v-row
+        :class="`${
+          $vuetify.breakpoint.smAndDown && 'd-flex flex-column-reverse'
+        }`"
+      >
+        <v-col md="6" class="hero-two" cols="12">
+          <h4 :class="`mb-4 ${$vuetify.breakpoint.smAndDown && 'text-center'}`">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
             Consectetur, accusantium doloribus eligendi non itaque debitis
             reiciendis corporis laboriosam suscipit sed.
@@ -24,9 +34,13 @@
             ></v-progress-linear>
           </v-card>
         </v-col>
-        <v-col md="6">
-          <v-card flat class="d-flex justify-end">
-            <img src="~/assets/img/work3.jpg" width="470" />
+        <v-col md="6" cols="12">
+          <v-card flat class="d-flex justify-end align-center">
+            <v-img
+              :aspect-ratio="8 / 7"
+              max-height="360"
+              :src="`https://drive.google.com/uc?export=view&id=${skillImg}`"
+            ></v-img>
           </v-card>
         </v-col>
       </v-row>
@@ -48,6 +62,7 @@
 export default {
   data() {
     return {
+      skillImg: '1sXGoYAzprv9FNmUO1LgFYwk9ibhAtC7S',
       skills: [
         {
           id: 1,
