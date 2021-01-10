@@ -2,6 +2,7 @@
   <v-row class="px-4">
     <v-col md="6">
       <v-card
+        color="transparent"
         :height="$vuetify.breakpoint.smAndDown ? 500 : 650"
         class="hero-one"
         flat
@@ -12,7 +13,14 @@
             I am <span class="primary--text">Sushil</span>
           </h1>
           <h1 class="goldman">I am a WebApp Developer</h1>
-          <v-btn color="primary" class="mt-7 goldman" large>Contact</v-btn>
+          <v-btn
+            color="primary"
+            :class="`mt-7 goldman ${$vuetify.theme.dark && 'black--text'}`"
+            large
+            to="/contact"
+          >
+            Contact
+          </v-btn>
           <div class="mt-10">
             <Icons />
           </div>

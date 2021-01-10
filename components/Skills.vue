@@ -8,7 +8,11 @@
       Skills
     </h1>
     <v-divider class="primary"></v-divider>
-    <v-card :class="$vuetify.breakpoint.smAndUp ? 'mt-6 px-4' : 'mt-6'" flat>
+    <v-card
+      :class="$vuetify.breakpoint.smAndUp ? 'mt-6 px-4' : 'mt-6'"
+      flat
+      color="transparent"
+    >
       <v-row
         :class="`${
           $vuetify.breakpoint.smAndDown && 'd-flex flex-column-reverse'
@@ -63,6 +67,7 @@
 export default {
   data() {
     return {
+      topSkills: [],
       skillImg: '1sXGoYAzprv9FNmUO1LgFYwk9ibhAtC7S',
       skillImgMin: '1od9XCRaVjYqv8W1RfrOqkzcYqxFR76Mm',
       skills: [
@@ -104,6 +109,11 @@ export default {
         },
       ],
     }
+  },
+  async fetch() {
+    this.topSkills = await fetch(
+      'https://sushil-kamble-default-rtdb.firebaseio.com/users/Y7ydFmn3A2ekCeNA8V2QM6EZTnz1/top-skills.json'
+    ).then((res) => res.json())
   },
 }
 </script>

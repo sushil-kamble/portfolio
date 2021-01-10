@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <section>
     <v-app-bar
       app
       class="container border--bottom"
-      color="white"
+      :color="$vuetify.theme.dark ? '#121212' : 'white'"
       height="70"
       flat
     >
@@ -18,27 +18,45 @@
 
       <div v-else>
         <v-btn text to="/" nuxt color="primary">
-          <span class="black--text">Home</span>
+          <span :class="$vuetify.theme.dark ? 'white--text' : 'black--text'"
+            >Home</span
+          >
         </v-btn>
         <v-btn text nuxt to="/skills" color="primary">
-          <span class="black--text">Skills</span>
+          <span :class="$vuetify.theme.dark ? 'white--text' : 'black--text'"
+            >Skills</span
+          >
         </v-btn>
         <v-btn text to="/projects" nuxt color="primary">
-          <span class="black--text">Projects</span>
+          <span :class="$vuetify.theme.dark ? 'white--text' : 'black--text'"
+            >Projects</span
+          >
         </v-btn>
         <v-btn text nuxt to="/contact" color="primary">
-          <span class="black--text">Contact</span>
+          <span :class="$vuetify.theme.dark ? 'white--text' : 'black--text'"
+            >Contact</span
+          >
         </v-btn>
       </div>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" disable-resize-watcher app>
       <v-list nav>
-        <v-list-item-group
-          v-model="group"
-          active-class="deep-purple--text text--accent-4"
-        >
-          <v-list-item nuxt to="/">
+        <v-list-item-group v-model="group">
+          <v-list-item>
+            <v-img
+              :lazy-src="`https://drive.google.com/uc?export=view&id=${meIdMin}`"
+              :src="`https://drive.google.com/uc?export=view&id=${meId}`"
+            ></v-img>
+          </v-list-item>
+
+          <v-list-item>
+            <h1 class="goldman">Sushil</h1>
+          </v-list-item>
+
+          <v-divider></v-divider>
+
+          <v-list-item nuxt to="/" class="mt-5">
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item>
 
@@ -53,15 +71,30 @@
           <v-list-item nuxt to="/contact">
             <v-list-item-title>Contact</v-list-item-title>
           </v-list-item>
+
+          <v-divider></v-divider>
+
+          <v-list-item>
+            <v-switch
+              v-model="$vuetify.theme.dark"
+              class="mt-4"
+              hint="Switch to Dark Mode"
+              inset
+              label="Dark Mode"
+              persistent-hint
+            ></v-switch>
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
-  </div>
+  </section>
 </template>
 
 <script>
 export default {
   data: () => ({
+    meId: '1PMUdprSvyYHadTR-LmqbMpy5oLE08Bwu',
+    meIdMin: '1smrkjOMaF1a0xGthvNKhljd0FH5FkrIs',
     drawer: false,
     group: null,
   }),
@@ -75,7 +108,7 @@ export default {
 </script>
 
 <style scoped>
-.border--bottom {
-  border-bottom: honeydew;
+.link-selected {
+  color: red;
 }
 </style>

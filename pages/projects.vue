@@ -6,9 +6,14 @@
           :src="`https://drive.google.com/uc?export=view&id=${project.imgId}`"
           :lazy-src="`https://drive.google.com/uc?export=view&id=${project.lazyId}`"
           :aspect-ratio="3 / 2"
-          gradient="76deg, rgba(0,57,189,0.9) 38%, rgba(58,132,255,0.2) 100%"
+          :gradient="
+            $vuetify.theme.dark
+              ? '16deg, rgba(235,235,0,0.9) 38%, rgba(0,0,0,0.2) 100%'
+              : '76deg, rgba(0,57,189,0.9) 38%, rgba(58,132,255,0.2) 100%'
+          "
           class="pa-4"
-          dark
+          :light="$vuetify.theme.dark"
+          :dark="!$vuetify.theme.dark"
         >
           <h1 class="goldman">{{ project.name }}</h1>
           <v-divider class="white"></v-divider>
@@ -31,6 +36,7 @@
             <p>
               <v-btn
                 class="px-4 mt-4"
+                dark
                 :large="$vuetify.breakpoint.smAndUp"
                 :small="$vuetify.breakpoint.smAndDown"
                 :href="project.link"
@@ -42,6 +48,7 @@
               </v-btn>
               <v-btn
                 class="px-4 mt-4"
+                dark
                 :large="$vuetify.breakpoint.smAndUp"
                 :small="$vuetify.breakpoint.smAndDown"
                 :href="project.link"
