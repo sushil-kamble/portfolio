@@ -1,6 +1,12 @@
 <template>
   <section :class="$vuetify.breakpoint.smAndUp ? 'px-4 mt-15' : 'mt-10'">
-    <h1 class="goldman primary--text my-head-font">Projects</h1>
+    <h1
+      :class="`goldman primary--text my-head-font ${
+        $vuetify.breakpoint.smAndDown && 'text-center'
+      }`"
+    >
+      Projects
+    </h1>
     <v-divider class="primary"></v-divider>
     <div :class="`${$vuetify.breakpoint.smAndUp && 'px-4'}`">
       <v-card class="mt-6" flat>
@@ -23,20 +29,30 @@
                     <v-overlay
                       v-if="hover"
                       absolute
-                      color="primary"
-                      opacity="0.8"
+                      color="accent"
+                      opacity="0.7"
                     >
                       <div class="px-2">
-                        <h1 class="goldman">Title</h1>
+                        <h1
+                          :class="`goldman ${
+                            $vuetify.theme.dark && 'black--text'
+                          }`"
+                        >
+                          Title
+                        </h1>
                         <v-divider class="white"></v-divider>
-                        <p class="px-1 py-2">
+                        <p
+                          :class="`px-1 py-2 ${
+                            $vuetify.theme.dark && 'black--text'
+                          }`"
+                        >
                           This is awesome Lorem, ipsum dolor sit amet
                           consectetur adipisicing elit. Quasi illum pariatur
                           eius aliquam totam laudantium provident laborum
                           debitis vitae maxime harum facilis, deleniti similique
                           delectus dolores explicabo, nostrum soluta voluptate.
                         </p>
-                        <v-btn block color="secondary">Visit website</v-btn>
+                        <v-btn block dark>Visit website</v-btn>
                       </div>
                     </v-overlay>
                   </v-fade-transition>

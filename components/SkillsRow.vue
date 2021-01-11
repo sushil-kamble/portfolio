@@ -11,13 +11,14 @@
       :class="`${$vuetify.breakpoint.smAndUp && 'mx-3'}`"
       v-for="val in iter"
       :key="val.id"
+      color="transparent"
     >
       <v-row no-gutters class="d-flex align-center">
         <v-col sm="2" cols="12" class="text-center">
           <i :class="`${val.icon} primary--text my-skill-icon`"></i>
         </v-col>
         <v-col sm="10" cols="12">
-          <v-card class="pa-0" flat>
+          <v-card class="pa-0" flat color="transparent">
             <v-card-title>{{ val.name }}</v-card-title>
             <v-card-text class="font-details"
               >Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni

@@ -32,8 +32,7 @@
             </div>
 
             <v-progress-linear
-              color="indigo"
-              rounded
+              color="primary"
               :value="skill.per"
             ></v-progress-linear>
           </v-card>

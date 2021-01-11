@@ -8,8 +8,12 @@
           :aspect-ratio="3 / 2"
           :gradient="
             $vuetify.theme.dark
-              ? '16deg, rgba(235,235,0,0.9) 38%, rgba(0,0,0,0.2) 100%'
-              : '76deg, rgba(0,57,189,0.9) 38%, rgba(58,132,255,0.2) 100%'
+              ? `76deg, ${hexToRgbA(
+                  $vuetify.theme.themes.dark.primary
+                )} 38%, rgba(0,0,0,0.2) 100%`
+              : `76deg, ${hexToRgbA(
+                  $vuetify.theme.themes.light.primary
+                )} 38%, rgba(58,132,255,0.2) 100%`
           "
           class="pa-4"
           :light="$vuetify.theme.dark"
@@ -113,6 +117,24 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    hexToRgbA(hex) {
+      var c
+      if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
+        c = hex.substring(1).split('')
+        if (c.length == 3) {
+          c = [c[0], c[0], c[1], c[1], c[2], c[2]]
+        }
+        c = '0x' + c.join('')
+        return (
+          'rgba(' +
+          [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') +
+          ',0.9)'
+        )
+      }
+      throw new Error('Bad Hex')
+    },
   },
 }
 </script>

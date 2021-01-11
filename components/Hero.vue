@@ -32,7 +32,12 @@
       class="hero-two d-flex justify-end"
       v-if="$vuetify.breakpoint.mdAndUp"
     >
-      <img src="~/assets/img/hero2.svg" height="380" />
+      <img
+        src="~/assets/img/hero2.svg"
+        height="380"
+        v-if="!$vuetify.theme.dark"
+      />
+      <img src="~/assets/img/hero2_dark.svg" height="380" v-else />
     </v-col>
   </v-row>
 </template>

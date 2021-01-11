@@ -1,11 +1,13 @@
 <template>
   <v-footer dark padless>
-    <v-card flat tile class="secondary text-center">
-      <v-card-text>
+    <v-card flat tile class="text-center" color="primary">
+      <v-card-text
+        :class="$vuetify.theme.dark ? 'grey darken-1' : 'blue accent-2'"
+      >
         <Icons />
       </v-card-text>
 
-      <v-card-text class="white--text pt-0">
+      <v-card-text :class="$vuetify.theme.dark ? 'black--text' : 'white--text'">
         Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
         Mauris cursus commodo interdum. Praesent ut risus eget metus luctus
         accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a

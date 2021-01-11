@@ -1,10 +1,12 @@
 <template>
-  <section>
+  <v-responsive>
     <v-app-bar
       app
-      class="container border--bottom"
+      class="container"
       :color="$vuetify.theme.dark ? '#121212' : 'white'"
       height="70"
+      max-width="1200"
+      tag="header"
       flat
     >
       <v-toolbar-title class="goldman">Sushil</v-toolbar-title>
@@ -87,7 +89,7 @@
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
-  </section>
+  </v-responsive>
 </template>
 
 <script>
@@ -108,7 +110,4 @@ export default {
 </script>
 
 <style scoped>
-.link-selected {
-  color: red;
-}
 </style>
