@@ -5,7 +5,7 @@
       class="container"
       :color="$vuetify.theme.dark ? '#121212' : 'white'"
       height="70"
-      max-width="1200"
+      max-width="1181"
       tag="header"
       flat
     >

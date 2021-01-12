@@ -20,7 +20,7 @@
         <v-col sm="10" cols="12">
           <v-card class="pa-0" flat color="transparent">
             <v-card-title>{{ val.name }}</v-card-title>
-            <v-card-text class="font-details"
+            <v-card-text class="font-details work-font"
               >Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
               suscipit ab mollitia molestiae eos error aut officia excepturi
               architecto velit.

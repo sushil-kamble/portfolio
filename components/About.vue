@@ -28,12 +28,11 @@
           </v-card>
         </v-col>
         <v-col md="8" class="hero-two" cols="12">
-          <h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quaerat
-            minus voluptatum laborum ipsa est, repudiandae possimus quam sequi
-            optio sunt enim eos tempore suscipit, sint adipisci. Quaerat, a
-            inventore.
+          <h3 class="work-font">
+            I am a computer engineering student from the University of Pune. I
+            love developing ideas that come to my mind.
           </h3>
+          <br />
         </v-col>
       </v-row>
     </v-card>

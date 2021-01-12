@@ -25,7 +25,7 @@ export default {
       },
       {
         href:
-          'https://fonts.googleapis.com/css2?family=Goldman&family=Roboto+Serif&display=swap',
+          'https://fonts.googleapis.com/css2?family=Goldman&family=Work+Sans&display=swap',
         rel: 'stylesheet',
       },
       {

@@ -1,38 +1,62 @@
 <template>
-  <div>
-    <v-icon
-      large
-      left
-      @mouseover="isHovering1 = true"
-      @mouseout="isHovering1 = false"
-      :color="isHovering1 ? 'accent' : ''"
-      >mdi-github
-    </v-icon>
-    <v-icon
-      large
-      left
-      @mouseover="isHovering2 = true"
-      @mouseout="isHovering2 = false"
-      :color="isHovering2 ? 'accent' : ''"
-      >mdi-linkedin
-    </v-icon>
-    <v-icon
-      large
-      left
-      @mouseover="isHovering3 = true"
-      @mouseout="isHovering3 = false"
-      :color="isHovering3 ? 'accent' : ''"
-      >mdi-instagram
-    </v-icon>
-    <v-icon
-      large
-      left
-      @mouseover="isHovering4 = true"
-      @mouseout="isHovering4 = false"
-      :color="isHovering4 ? 'accent' : ''"
-      >mdi-twitter
-    </v-icon>
-  </div>
+  <span>
+    <a
+      href="https://github.com/sushil-kamble"
+      class="text-decoration-none"
+      target="_blank"
+    >
+      <v-icon
+        large
+        :left="$vuetify.breakpoint.smAndUp"
+        @mouseover="isHovering1 = true"
+        @mouseout="isHovering1 = false"
+        :color="isHovering1 ? 'accent' : ''"
+        >mdi-github
+      </v-icon>
+    </a>
+    <a
+      href="https://www.linkedin.com/in/sushil-kamble-51b9181a7/"
+      class="text-decoration-none"
+      target="_blank"
+    >
+      <v-icon
+        large
+        :left="$vuetify.breakpoint.smAndUp"
+        @mouseover="isHovering2 = true"
+        @mouseout="isHovering2 = false"
+        :color="isHovering2 ? 'accent' : ''"
+        >mdi-linkedin
+      </v-icon>
+    </a>
+    <a
+      href="https://www.instagram.com/always_sushil/"
+      class="text-decoration-none"
+      target="_blank"
+    >
+      <v-icon
+        large
+        :left="$vuetify.breakpoint.smAndUp"
+        @mouseover="isHovering3 = true"
+        @mouseout="isHovering3 = false"
+        :color="isHovering3 ? 'accent' : ''"
+        >mdi-instagram
+      </v-icon>
+    </a>
+    <a
+      href="https://twitter.com/SushilK28005811"
+      class="text-decoration-none"
+      target="_blank"
+    >
+      <v-icon
+        large
+        :left="$vuetify.breakpoint.smAndUp"
+        @mouseover="isHovering4 = true"
+        @mouseout="isHovering4 = false"
+        :color="isHovering4 ? 'accent' : ''"
+        >mdi-twitter
+      </v-icon>
+    </a>
+  </span>
 </template>
 <script>
 export default {
