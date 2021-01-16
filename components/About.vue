@@ -14,7 +14,7 @@
       color="transparent"
     >
       <v-row>
-        <v-col md="4" cols="12">
+        <v-col md="3" cols="12">
           <v-card
             flat
             color="transparent"
@@ -23,14 +23,21 @@
             <v-img
               :lazy-src="`https://drive.google.com/uc?export=view&id=${heroImgMin}`"
               :src="`https://drive.google.com/uc?export=view&id=${heroImg}`"
-              max-height="300"
+              max-height="250"
+              :contain="$vuetify.breakpoint.smAndUp"
             ></v-img>
           </v-card>
         </v-col>
-        <v-col md="8" class="hero-two" cols="12">
-          <h3 class="work-font">
+        <v-col md="9" cols="12">
+          <h3 class="work-font text-justify">
             I am a computer engineering student from the University of Pune. I
-            love developing ideas that come to my mind.
+            love developing ideas that come to my mind. Learning new
+            technologies is my hobby along with playing games and watching
+            movies. I keep myself up-to-date with the new trends going around
+            the world. Developing WebApp's is my passion. I have plesant
+            knowledge about frontend and backend technologies as I have
+            developed few interesting projects using them. I am currently
+            studying andriod development and DevOps.
           </h3>
           <br />
         </v-col>

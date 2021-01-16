@@ -6,3 +6,17 @@
     <v-textarea label="Message"></v-textarea>
   </v-card>
 </template>
+
+<script>
+export default {
+  head: {
+    titleTemplate: 'Sushil - %s',
+    title: 'Contact',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '' },
+    ],
+  },
+}
+</script>
