@@ -25,10 +25,10 @@
             reiciendis corporis laboriosam suscipit sed.
           </h4>
           <v-card class="mb-2" v-for="skill in skills" :key="skill.id">
-            <div class="d-flex justify-space-between px-4 align-center">
+            <div class="d-flex justify-space-between px-3 align-center">
               <i :class="`${skill.icon} primary--text my-skill-icon`"></i>
-              <h3 class="goldman mx-4 pt-1">{{ skill.name }}</h3>
-              <div>{{ skill.per }}%</div>
+              <h4 class="goldman pt-1">{{ skill.name }}</h4>
+              <h4 class="goldman">{{ skill.per }}%</h4>
             </div>
 
             <v-progress-linear
@@ -72,33 +72,33 @@ export default {
       skills: [
         {
           id: 1,
-          name: 'HTML5',
-          icon: 'bx bxl-html5',
-          per: 85,
-        },
-        {
-          id: 2,
           name: 'CSS3',
           icon: 'bx bxl-css3',
           per: 60,
         },
         {
-          id: 3,
+          id: 2,
           name: 'Javascript',
           icon: 'bx bxl-javascript',
           per: 75,
         },
         {
+          id: 3,
+          name: 'Vue.js',
+          icon: 'bx bxl-vuejs',
+          per: 75,
+        },
+        {
           id: 4,
-          name: 'Python',
-          icon: 'bx bxl-python',
-          per: 80,
+          name: 'React',
+          icon: 'bx bxl-react',
+          per: 75,
         },
         {
           id: 5,
-          name: 'Vue',
-          icon: 'bx bxl-vuejs',
-          per: 75,
+          name: 'Python - django',
+          icon: 'bx bxl-django',
+          per: 80,
         },
         {
           id: 6,

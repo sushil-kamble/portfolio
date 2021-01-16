@@ -29,7 +29,11 @@
           </v-card>
         </v-col>
         <v-col md="9" cols="12">
-          <h3 class="work-font text-justify">
+          <h3
+            :class="`work-font text-justify ${
+              $vuetify.breakpoint.smAndDown && 'mobile-font'
+            }`"
+          >
             I am a computer engineering student from the University of Pune. I
             love developing ideas that come to my mind. Learning new
             technologies is my hobby along with playing games and watching
