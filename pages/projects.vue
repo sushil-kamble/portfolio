@@ -26,13 +26,13 @@
               {{ project.description }}
             </p>
             <h2>Features</h2>
-            <ul>
+            <ul class="work-font">
               <li v-for="(feature, x) in project.features" :key="x">
                 {{ feature }}
               </li>
             </ul>
             <h2>Tech Stack</h2>
-            <ul>
+            <ul class="work-font">
               <li v-for="(tech, y) in project.techStack" :key="y">
                 {{ tech }}
               </li>
@@ -55,7 +55,7 @@
                 dark
                 :large="$vuetify.breakpoint.smAndUp"
                 :small="$vuetify.breakpoint.smAndDown"
-                :href="project.link"
+                :href="project.github"
                 target="_blank"
               >
                 <v-icon left>mdi-github</v-icon>
@@ -90,8 +90,16 @@ export default {
           description: 'this is awesome',
           imgId: '1zUbCpbaX27EqSr96zFA57GS_tXmT4_oo',
           lazyId: '1BpNDOgP_VUj366SmTdAN6ykrtNJPoRm8',
-          features: ['1 awesome', '1 awesome', '1 awesome'],
-          techStack: ['1 awesome', '1 awesome', '1 awesome'],
+          features: [
+            'Authentication',
+            'Realtime todo sync',
+            'Set a deadline for a todo',
+          ],
+          techStack: [
+            'vue.js, vue-router & vuex',
+            'Firebase Auth and Cloud Firestore',
+            'vuetify',
+          ],
           link: 'https://allofmytodo.web.app/',
           github: 'https://github.com/sushil-kamble/advanced-todo',
         },
@@ -100,8 +108,16 @@ export default {
           description: 'this is awesome',
           imgId: '1lPUIviHI9rrYpIMK_bGL7ZZt-P_RRnPg',
           lazyId: '1fN6wVex6ZfILU9vHSlA6kdiRESbu6jVo',
-          features: ['1 awesome', '1 awesome', '1 awesome'],
-          techStack: ['1 awesome', '1 awesome', '1 awesome'],
+          features: [
+            'Responsive and Simple UI',
+            'Authenticatiion & Realtime Chat Sync',
+            'Realtime Presence',
+          ],
+          techStack: [
+            'vue.js, vue-router & vuex',
+            'Firebase Auth and Database',
+            'vuetify',
+          ],
           link: 'https://chatonweb-chathub.web.app/',
           github: 'https://github.com/sushil-kamble/chat-hub',
         },
@@ -110,8 +126,16 @@ export default {
           description: 'this is awesome',
           imgId: '14WYWKXGe7Ha16oVWdS_6h9pwfozwnmnJ',
           lazyId: '1N4M41ivHVuooVC-9TQN2uEwAtwZ0aylF',
-          features: ['1 awesome', '1 awesome', '1 awesome'],
-          techStack: ['1 awesome', '1 awesome', '1 awesome'],
+          features: [
+            'Authentication',
+            'Recommendation System & Chat System',
+            'Watchlist, Reviews and Rating',
+          ],
+          techStack: [
+            'Django, Django-channels and rest-framework',
+            'Pandas, Numpy, bs4, Requests',
+            'Vue.js & Bootstrap',
+          ],
           github: 'https://github.com/sushil-kamble/movie-recommender',
         },
         {
@@ -119,8 +143,16 @@ export default {
           description: 'this is awesome',
           imgId: '1D3CK-oZOXCHMb1RNANdAhbOl1v-QJTO-',
           lazyId: '117B1SQ7kNsVxArZU81h95N5JDfj7GhMB',
-          features: ['1 awesome', '1 awesome', '1 awesome'],
-          techStack: ['1 awesome', '1 awesome', '1 awesome'],
+          features: [
+            'Authentication',
+            'Responsive and simple UI',
+            'Realtime Updates',
+          ],
+          techStack: [
+            'vue.js, vue-router & vuex',
+            'Firebase Auth and Cloud Firestore',
+            'vuetify',
+          ],
           link: 'https://my-transfers.web.app/',
           github: 'https://github.com/sushil-kamble/transactions-diary',
         },
