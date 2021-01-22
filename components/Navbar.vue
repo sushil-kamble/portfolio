@@ -14,11 +14,11 @@
       <v-spacer></v-spacer>
 
       <v-app-bar-nav-icon
-        v-if="$vuetify.breakpoint.smAndDown"
+        v-if="$vuetify.breakpoint.smAndDown && reveal"
         @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
 
-      <div v-else>
+      <div v-if="$vuetify.breakpoint.smAndUp && reveal">
         <v-btn text to="/" nuxt color="primary">
           <span :class="$vuetify.theme.dark ? 'white--text' : 'black--text'"
             >Home</span
@@ -99,11 +99,24 @@ export default {
     meIdMin: '1smrkjOMaF1a0xGthvNKhljd0FH5FkrIs',
     drawer: false,
     group: null,
+    reveal: false,
   }),
 
   watch: {
     group() {
       this.drawer = false
+    },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+      setTimeout(() => this.loadingFinish())
+    })
+  },
+  methods: {
+    loadingFinish() {
+      this.$nuxt.$loading.finish()
+      this.reveal = true
     },
   },
 }
