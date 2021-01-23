@@ -4,7 +4,6 @@
       <transition
         name="custom-classes-transition"
         enter-active-class="animated backInLeft"
-        leave-active-class="animated backOutRight"
         appear
       >
         <v-card
@@ -36,12 +35,12 @@
       </transition>
     </v-col>
     <v-col cols="12" v-else>
-      <v-card :height="650" flat class="d-flex justify-center align-center">
+      <v-card height="650" flat class="d-flex justify-center align-center">
         <v-progress-circular
-          color="primary"
+          class="primary--text"
           indeterminate
           size="64"
-          :width="7"
+          width="7"
         ></v-progress-circular>
       </v-card>
     </v-col>
@@ -54,7 +53,6 @@
       <transition
         name="custom-classes-transition"
         enter-active-class="animated backInRight"
-        leave-active-class="animated backOutLeft"
         appear
       >
         <img

@@ -26,13 +26,13 @@
               {{ project.description }}
             </p>
             <h2>Features</h2>
-            <ul class="work-font">
+            <ul>
               <li v-for="(feature, x) in project.features" :key="x">
                 {{ feature }}
               </li>
             </ul>
             <h2>Tech Stack</h2>
-            <ul class="work-font">
+            <ul>
               <li v-for="(tech, y) in project.techStack" :key="y">
                 {{ tech }}
               </li>

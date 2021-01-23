@@ -5,7 +5,7 @@
         $vuetify.breakpoint.smAndDown && 'text-center'
       }`"
     >
-      Projects
+      Certificates
     </h1>
     <v-divider class="primary mb-4"></v-divider>
     <v-sheet :class="$vuetify.breakpoint.smAndUp && 'ma-4'" color="transparent">
@@ -17,7 +17,7 @@
         :show-arrows="$vuetify.breakpoint.mdAndUp"
       >
         <v-slide-item
-          v-for="n in projects.length"
+          v-for="n in certificates.length"
           :key="n"
           v-slot="{ active, toggle }"
         >
@@ -28,30 +28,30 @@
           >
             <v-img
               :src="`https://drive.google.com/uc?export=view&id=${
-                projects[n - 1].imgId
+                certificates[n - 1].imgId
               }`"
               :lazy-src="`https://drive.google.com/uc?export=view&id=${
-                projects[n - 1].lazyId
+                certificates[n - 1].lazyId
               }`"
-              :height="$vuetify.breakpoint.smAndDown ? 200 : 230"
-              :aspect-ratio="1 / 1"
+              :height="$vuetify.breakpoint.smAndDown ? 150 : 180"
+              contain
             ></v-img>
-            <h1
+            <h2
               :class="`text-center goldman ${active && 'black--text'} ${
                 $vuetify.breakpoint.smAndDown && 'mobile-font'
               }`"
               v-if="$vuetify.theme.dark"
             >
-              {{ projects[n - 1].name }}
-            </h1>
-            <h1
+              {{ certificates[n - 1].name }}
+            </h2>
+            <h2
               :class="`text-center goldman ${active && 'white--text'} ${
                 $vuetify.breakpoint.smAndDown && 'mobile-font'
               }`"
               v-else
             >
-              {{ projects[n - 1].name }}
-            </h1>
+              {{ certificates[n - 1].name }}
+            </h2>
           </v-card>
         </v-slide-item>
       </v-slide-group>
@@ -65,49 +65,25 @@
         >
           <div class="fill-height text-center pa-5">
             <h2 class="goldman">
-              {{ projects[model].name }}
+              {{ certificates[model].name }}
             </h2>
             <v-divider class="primary"></v-divider>
             <h4 class="work-font">
-              {{ projects[model].description }}
+              {{ certificates[model].description }}
             </h4>
-            <p class="text-caption my-2">For more info see project page.</p>
-            <p>
-              <v-btn
-                class="px-4"
-                color="secondary"
-                :small="$vuetify.breakpoint.smAndDown"
-                :href="projects[model].link"
-                target="_blank"
-                v-if="projects[model].link"
-              >
-                <v-icon left>mdi-arrow-top-right</v-icon>
-                Direct link
-              </v-btn>
-              <v-btn
-                class="px-4"
-                color="secondary"
-                :small="$vuetify.breakpoint.smAndDown"
-                :href="projects[model].github"
-                target="_blank"
-              >
-                <v-icon left>mdi-github</v-icon>
-                Github
-              </v-btn>
-            </p>
+            <v-btn
+              class="px-4 mt-5"
+              color="secondary"
+              :small="$vuetify.breakpoint.smAndDown"
+              :href="certificates[model].link"
+              target="_blank"
+            >
+              <v-icon left>mdi-arrow-top-right</v-icon>
+              View Certificate
+            </v-btn>
           </div>
         </v-sheet>
       </v-expand-transition>
-      <v-btn
-        large
-        block
-        color="primary"
-        class="mt-3 goldman"
-        outlined
-        to="/projects"
-      >
-        My Projects
-      </v-btn>
     </v-sheet>
   </section>
 </template>
@@ -116,37 +92,38 @@
 export default {
   data: () => ({
     model: null,
-    projects: [
+    certificates: [
       {
-        name: 'Advanced Todo',
+        name: 'Applied Data Science with Python',
         description: 'In this application we can set timer for a todo.',
-        imgId: '1zUbCpbaX27EqSr96zFA57GS_tXmT4_oo',
-        lazyId: '1BpNDOgP_VUj366SmTdAN6ykrtNJPoRm8',
-        link: 'https://allofmytodo.web.app/',
-        github: 'https://github.com/sushil-kamble/advanced-todo',
+        imgId: '11LqCGGBOHwRtRjG6OhjnEAfbyDeJe1_L',
+        lazyId: '1Qy3xV117-4N7oxmm4arjCu2lsPhO4kGr',
+        link:
+          'https://www.coursera.org/account/accomplishments/specialization/certificate/P27GDLJU9AXU',
       },
       {
-        name: 'Chat-hub',
+        name: 'Introduction to Data Science',
         description: 'This is a group chat application.',
-        imgId: '1lPUIviHI9rrYpIMK_bGL7ZZt-P_RRnPg',
-        lazyId: '1fN6wVex6ZfILU9vHSlA6kdiRESbu6jVo',
-        link: 'https://chatonweb-chathub.web.app/',
-        github: 'https://github.com/sushil-kamble/chat-hub',
+        imgId: '16xDp2mOcXxJ28CPKx6K_SJZfs3hWJha0',
+        lazyId: '1Qy3xV117-4N7oxmm4arjCu2lsPhO4kGr',
+        link:
+          'https://www.coursera.org/account/accomplishments/specialization/certificate/VG7VXC75AYS3',
       },
       {
-        name: 'Movie Hub',
+        name: 'Neural Network and Deep Learning',
         description: 'this is awesome',
-        imgId: '14WYWKXGe7Ha16oVWdS_6h9pwfozwnmnJ',
-        lazyId: '1N4M41ivHVuooVC-9TQN2uEwAtwZ0aylF',
-        github: 'https://github.com/sushil-kamble/movie-recommender',
+        imgId: '1ImTTizOKo_wwBt-nWnRON6gg2boxBhwV',
+        lazyId: '1Qy3xV117-4N7oxmm4arjCu2lsPhO4kGr',
+        link:
+          'https://www.coursera.org/account/accomplishments/certificate/KWV9EZWBJ66B',
       },
       {
-        name: 'Transaction Dairy',
+        name: 'Using Python to Access Web Data',
         description: 'this is awesome',
-        imgId: '1D3CK-oZOXCHMb1RNANdAhbOl1v-QJTO-',
-        lazyId: '117B1SQ7kNsVxArZU81h95N5JDfj7GhMB',
-        link: 'https://my-transfers.web.app/',
-        github: 'https://github.com/sushil-kamble/transactions-diary',
+        imgId: '1S7Dw2pd8PM7CY0TeYNu10SiqzfbfUZvI',
+        lazyId: '1Qy3xV117-4N7oxmm4arjCu2lsPhO4kGr',
+        link:
+          'https://www.coursera.org/account/accomplishments/certificate/EKGC3AP3NHZE',
       },
     ],
   }),

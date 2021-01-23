@@ -5,6 +5,7 @@
     <About />
     <Skills />
     <Projects />
+    <Certificates />
   </v-container>
 </template>
 
