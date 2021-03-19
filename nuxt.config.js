@@ -16,21 +16,12 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
-        href: 'https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css',
-        rel: 'stylesheet',
-      },
-      {
         rel: 'preconnect',
         href: 'https://fonts.gstatic.com',
       },
       {
         href:
           'https://fonts.googleapis.com/css2?family=Goldman&family=Work+Sans&display=swap',
-        rel: 'stylesheet',
-      },
-      {
-        href:
-          'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.compat.css',
         rel: 'stylesheet',
       },
       {

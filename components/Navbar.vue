@@ -18,7 +18,7 @@
         @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
 
-      <div v-if="$vuetify.breakpoint.smAndUp && reveal">
+      <div v-else-if="$vuetify.breakpoint.smAndUp && reveal">
         <v-btn text to="/" nuxt color="primary">
           <span :class="$vuetify.theme.dark ? 'white--text' : 'black--text'"
             >Home</span
