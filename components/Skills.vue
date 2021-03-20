@@ -42,8 +42,7 @@
             <v-img
               :aspect-ratio="8 / 7"
               max-height="360"
-              :lazy-src="`https://drive.google.com/uc?export=view&id=${skillImgMin}`"
-              :src="`https://drive.google.com/uc?export=view&id=${skillImg}`"
+              src="img/skills.jpg"
             ></v-img>
           </v-card>
         </v-col>

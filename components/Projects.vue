@@ -27,12 +27,7 @@
             @click="toggle"
           >
             <v-img
-              :src="`https://drive.google.com/uc?export=view&id=${
-                projects[n - 1].imgId
-              }`"
-              :lazy-src="`https://drive.google.com/uc?export=view&id=${
-                projects[n - 1].lazyId
-              }`"
+              :src="`img/projects/${projects[n - 1].img}`"
               :height="$vuetify.breakpoint.smAndDown ? 200 : 230"
               :aspect-ratio="1 / 1"
             ></v-img>
@@ -120,31 +115,27 @@ export default {
       {
         name: 'Advanced Todo',
         description: 'In this application we can set timer for a todo.',
-        imgId: '1zUbCpbaX27EqSr96zFA57GS_tXmT4_oo',
-        lazyId: '1BpNDOgP_VUj366SmTdAN6ykrtNJPoRm8',
+        img: 'todo.png',
         link: 'https://allofmytodo.web.app/',
         github: 'https://github.com/sushil-kamble/advanced-todo',
       },
       {
         name: 'Chat-hub',
         description: 'This is a group chat application.',
-        imgId: '1lPUIviHI9rrYpIMK_bGL7ZZt-P_RRnPg',
-        lazyId: '1fN6wVex6ZfILU9vHSlA6kdiRESbu6jVo',
+        img: 'chathub.png',
         link: 'https://chatonweb-chathub.web.app/',
         github: 'https://github.com/sushil-kamble/chat-hub',
       },
       {
         name: 'Movie Hub',
         description: 'this is awesome',
-        imgId: '14WYWKXGe7Ha16oVWdS_6h9pwfozwnmnJ',
-        lazyId: '1N4M41ivHVuooVC-9TQN2uEwAtwZ0aylF',
+        img: 'rec.jpg',
         github: 'https://github.com/sushil-kamble/movie-recommender',
       },
       {
         name: 'Transaction Dairy',
         description: 'this is awesome',
-        imgId: '1D3CK-oZOXCHMb1RNANdAhbOl1v-QJTO-',
-        lazyId: '117B1SQ7kNsVxArZU81h95N5JDfj7GhMB',
+        img: 'transfer.png',
         link: 'https://my-transfers.web.app/',
         github: 'https://github.com/sushil-kamble/transactions-diary',
       },

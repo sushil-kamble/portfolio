@@ -21,8 +21,7 @@
             :class="`${$vuetify.breakpoint.smAndDown && 'text-center'}`"
           >
             <v-img
-              :lazy-src="`https://drive.google.com/uc?export=view&id=${heroImgMin}`"
-              :src="`https://drive.google.com/uc?export=view&id=${heroImg}`"
+              src="img/hero.jpg"
               max-height="250"
               :contain="$vuetify.breakpoint.smAndUp"
             ></v-img>

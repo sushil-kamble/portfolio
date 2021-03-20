@@ -27,12 +27,7 @@
             @click="toggle"
           >
             <v-img
-              :src="`https://drive.google.com/uc?export=view&id=${
-                certificates[n - 1].imgId
-              }`"
-              :lazy-src="`https://drive.google.com/uc?export=view&id=${
-                certificates[n - 1].lazyId
-              }`"
+              :src="`img/certificates/${certificates[n - 1].img}`"
               :height="$vuetify.breakpoint.smAndDown ? 150 : 180"
               contain
             ></v-img>
@@ -96,32 +91,28 @@ export default {
       {
         name: 'Applied Data Science with Python',
         description: 'In this application we can set timer for a todo.',
-        imgId: '11LqCGGBOHwRtRjG6OhjnEAfbyDeJe1_L',
-        lazyId: '1Qy3xV117-4N7oxmm4arjCu2lsPhO4kGr',
+        img: 'applied_data_science.jpg',
         link:
           'https://www.coursera.org/account/accomplishments/specialization/certificate/P27GDLJU9AXU',
       },
       {
         name: 'Introduction to Data Science',
         description: 'This is a group chat application.',
-        imgId: '16xDp2mOcXxJ28CPKx6K_SJZfs3hWJha0',
-        lazyId: '1Qy3xV117-4N7oxmm4arjCu2lsPhO4kGr',
+        img: 'intro_to_data_science.jpg',
         link:
           'https://www.coursera.org/account/accomplishments/specialization/certificate/VG7VXC75AYS3',
       },
       {
         name: 'Neural Network and Deep Learning',
         description: 'this is awesome',
-        imgId: '1ImTTizOKo_wwBt-nWnRON6gg2boxBhwV',
-        lazyId: '1Qy3xV117-4N7oxmm4arjCu2lsPhO4kGr',
+        img: 'deep_learning.jpg',
         link:
           'https://www.coursera.org/account/accomplishments/certificate/KWV9EZWBJ66B',
       },
       {
         name: 'Using Python to Access Web Data',
         description: 'this is awesome',
-        imgId: '1S7Dw2pd8PM7CY0TeYNu10SiqzfbfUZvI',
-        lazyId: '1Qy3xV117-4N7oxmm4arjCu2lsPhO4kGr',
+        img: 'using_python_access_web_data.jpg',
         link:
           'https://www.coursera.org/account/accomplishments/certificate/EKGC3AP3NHZE',
       },
