@@ -117,30 +117,30 @@ export default {
         description: 'In this application we can set timer for a todo.',
         img: 'todo.png',
         link: 'https://allofmytodo.web.app/',
-        github: 'https://github.com/sushil-kamble/advanced-todo',
+        github: 'https://github.com/sushil-kamble/advanced-todo'
       },
       {
         name: 'Chat-hub',
         description: 'This is a group chat application.',
         img: 'chathub.png',
         link: 'https://chatonweb-chathub.web.app/',
-        github: 'https://github.com/sushil-kamble/chat-hub',
+        github: 'https://github.com/sushil-kamble/chat-hub'
       },
       {
         name: 'Movie Hub',
         description: 'this is awesome',
         img: 'rec.jpg',
-        github: 'https://github.com/sushil-kamble/movie-recommender',
+        github: 'https://github.com/sushil-kamble/movie-recommender'
       },
       {
         name: 'Transaction Dairy',
         description: 'this is awesome',
         img: 'transfer.png',
         link: 'https://my-transfers.web.app/',
-        github: 'https://github.com/sushil-kamble/transactions-diary',
-      },
-    ],
-  }),
+        github: 'https://github.com/sushil-kamble/transactions-diary'
+      }
+    ]
+  })
 }
 </script>
 

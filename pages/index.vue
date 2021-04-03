@@ -3,9 +3,12 @@
   <v-container>
     <div v-if="reveal">
       <Hero />
+
       <About />
       <Skills />
-      <Projects />
+      <div data-aos="fade-up">
+        <Projects />
+      </div>
       <Certificates />
     </div>
     <div v-else>
@@ -29,12 +32,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-    ],
+      { hid: 'description', name: 'description', content: '' }
+    ]
   },
   data() {
     return {
-      reveal: false,
+      reveal: false
     }
   },
   mounted() {
@@ -47,8 +50,8 @@ export default {
     loadingFinish() {
       this.$nuxt.$loading.finish()
       this.reveal = true
-    },
-  },
+    }
+  }
 }
 </script>
 

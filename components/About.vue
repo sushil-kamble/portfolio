@@ -49,17 +49,6 @@
   </section>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      heroImg: '1xifzdeP9sPTqPpnxOI03ZYyx4k01Z28a',
-      heroImgMin: '1p1jGT9CyqT9nQTyDClyHC8fg_2lxrY8k',
-    }
-  },
-}
-</script>
-
 <style scoped>
 .my-head-font {
   font-size: 35px;

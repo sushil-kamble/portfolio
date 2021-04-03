@@ -73,46 +73,46 @@ export default {
           id: 1,
           name: 'CSS3',
           icon: 'bx bxl-css3',
-          per: 60,
+          per: 60
         },
         {
           id: 2,
           name: 'Javascript',
           icon: 'bx bxl-javascript',
-          per: 75,
+          per: 75
         },
         {
           id: 3,
           name: 'Vue.js',
           icon: 'bx bxl-vuejs',
-          per: 75,
+          per: 75
         },
         {
           id: 4,
           name: 'React',
           icon: 'bx bxl-react',
-          per: 75,
+          per: 75
         },
         {
           id: 5,
           name: 'Python - django',
           icon: 'bx bxl-django',
-          per: 80,
+          per: 80
         },
         {
           id: 6,
           name: 'Firebase',
           icon: 'bx bxl-firebase',
-          per: 70,
-        },
-      ],
+          per: 70
+        }
+      ]
     }
   },
   async fetch() {
     this.topSkills = await fetch(
       'https://sushil-kamble-default-rtdb.firebaseio.com/users/Y7ydFmn3A2ekCeNA8V2QM6EZTnz1/top-skills.json'
     ).then((res) => res.json())
-  },
+  }
 }
 </script>
 

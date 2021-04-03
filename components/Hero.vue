@@ -48,7 +48,7 @@ export default {
   data() {
     return {
       reveal: false,
-      show: true,
+      show: true
     }
   },
   mounted() {
@@ -61,8 +61,8 @@ export default {
     loadingFinish() {
       this.$nuxt.$loading.finish()
       this.reveal = true
-    },
-  },
+    }
+  }
 }
 </script>
 

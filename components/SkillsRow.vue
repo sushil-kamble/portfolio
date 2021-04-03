@@ -35,7 +35,7 @@
 <script>
 export default {
   name: 'SkillsRow',
-  props: ['name', 'iter'],
+  props: ['name', 'iter']
 }
 </script>
 

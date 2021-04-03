@@ -65,8 +65,8 @@ export default {
       isHovering1: false,
       isHovering2: false,
       isHovering3: false,
-      isHovering4: false,
+      isHovering4: false
     }
-  },
+  }
 }
 </script>

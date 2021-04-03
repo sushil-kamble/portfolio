@@ -11,6 +11,34 @@
   font-family: 'Work Sans', sans-serif;
 }
 
+.page-enter-active {
+  animation: bounce-in 0.5s;
+}
+.page-leave-active {
+  animation: bounce-in 0.2s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* .page-enter-active,
+.page-leave-active {
+  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+} */
+
 .mobile-font {
   font-size: 16px;
 }

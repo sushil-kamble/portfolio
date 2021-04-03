@@ -99,13 +99,13 @@ export default {
     meIdMin: '1smrkjOMaF1a0xGthvNKhljd0FH5FkrIs',
     drawer: false,
     group: null,
-    reveal: false,
+    reveal: false
   }),
 
   watch: {
     group() {
       this.drawer = false
-    },
+    }
   },
   mounted() {
     this.$nextTick(() => {
@@ -117,8 +117,8 @@ export default {
     loadingFinish() {
       this.$nuxt.$loading.finish()
       this.reveal = true
-    },
-  },
+    }
+  }
 }
 </script>
 
