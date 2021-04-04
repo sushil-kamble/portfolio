@@ -1,20 +1,30 @@
 <template>
-  <section :class="$vuetify.breakpoint.smAndUp ? 'px-4 mt-15' : 'mt-10'">
+  <section
+    :class="`my-margin-bottom-large ${$vuetify.breakpoint.smAndUp && 'px-4'}`"
+  >
     <h1
-      :class="`goldman primary--text my-head-font ${
-        $vuetify.breakpoint.smAndDown && 'text-center'
-      }`"
+      class="goldman primary--text my-head-font my-text-center"
+      data-aos="fade-right"
     >
       Projects
     </h1>
-    <v-divider class="primary mb-4"></v-divider>
-    <v-sheet :class="$vuetify.breakpoint.smAndUp && 'ma-4'" color="transparent">
+    <v-divider
+      class="primary mb-4"
+      data-aos="zoom-in"
+      data-aos-delay="100"
+      data-aos-duration="1000"
+    ></v-divider>
+    <v-sheet
+      :class="`${$vuetify.breakpoint.smAndUp && 'ma-4'}`"
+      color="transparent"
+    >
       <v-slide-group
         v-model="model"
         :class="$vuetify.breakpoint.smAndUp && 'pa-3'"
         center-active
         :active-class="$vuetify.theme.dark ? 'accent' : 'primary'"
         :show-arrows="$vuetify.breakpoint.mdAndUp"
+        data-aos="zoom-out-up"
       >
         <v-slide-item
           v-for="n in projects.length"

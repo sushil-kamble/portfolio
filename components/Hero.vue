@@ -1,6 +1,6 @@
 <template>
   <v-row class="px-4">
-    <v-col md="6">
+    <v-col md="6" data-aos="zoom-in-left">
       <v-card
         color="transparent"
         :height="$vuetify.breakpoint.smAndDown ? 500 : 650"
@@ -33,6 +33,7 @@
       md="6"
       class="hero-two d-flex justify-end"
       v-if="$vuetify.breakpoint.mdAndUp"
+      data-aos="zoom-out-right"
     >
       <img
         src="~/assets/img/hero2.svg"

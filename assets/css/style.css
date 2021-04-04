@@ -11,7 +11,7 @@
   font-family: 'Work Sans', sans-serif;
 }
 
-.page-enter-active {
+/* .page-enter-active {
   animation: bounce-in 0.5s;
 }
 .page-leave-active {
@@ -27,18 +27,43 @@
   100% {
     transform: scale(1);
   }
-}
+} */
 
-/* .page-enter-active,
+.page-enter-active,
 .page-leave-active {
-  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: opacity 0.3s;
 }
 
 .page-enter,
 .page-leave-to {
   opacity: 0;
-} */
+}
 
-.mobile-font {
-  font-size: 16px;
+.max-height-img {
+  max-height: 250px;
+}
+.my-margin-bottom-large {
+  margin-bottom: 100px;
+}
+
+@media only screen and (min-width: 960px) {
+  /* BORDER BOTTOM */
+  .my-margin-bottom-large {
+    margin-bottom: 160px;
+  }
+  .max-height-img {
+    max-height: 300px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .mobile-font {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .my-text-center {
+    text-align: center;
+  }
 }

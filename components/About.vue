@@ -1,20 +1,26 @@
 <template>
   <section :class="`${$vuetify.breakpoint.smAndUp && 'px-4'}`">
     <h1
-      :class="`goldman primary--text my-head-font ${
-        $vuetify.breakpoint.smAndDown && 'text-center'
-      }`"
+      class="goldman primary--text my-head-font my-text-center"
+      data-aos="fade-right"
     >
       About Me
     </h1>
-    <v-divider class="primary"></v-divider>
+    <v-divider
+      class="primary"
+      data-aos="zoom-in"
+      data-aos-delay="100"
+      data-aos-duration="1000"
+    ></v-divider>
     <v-card
-      :class="`mt-6 ${$vuetify.breakpoint.smAndUp && 'px-4'}`"
+      :class="`mt-6 my-margin-bottom-large ${
+        $vuetify.breakpoint.smAndUp && 'px-4'
+      }`"
       flat
       color="transparent"
     >
       <v-row>
-        <v-col md="3" cols="12">
+        <v-col md="4" cols="12" data-aos="zoom-out-left">
           <v-card
             flat
             color="transparent"
@@ -22,35 +28,65 @@
           >
             <v-img
               src="img/hero.jpg"
-              max-height="250"
+              class="max-height-img"
               :contain="$vuetify.breakpoint.smAndUp"
             ></v-img>
           </v-card>
         </v-col>
-        <v-col md="9" cols="12">
-          <h3
-            :class="`work-font text-justify ${
-              $vuetify.breakpoint.smAndDown && 'mobile-font'
-            }`"
-          >
-            I am a computer engineering student from the University of Pune. I
-            love developing ideas that come to my mind. Learning new
-            technologies is my hobby along with playing games and watching
-            movies. I keep myself up-to-date with the new trends going around
-            the world. Developing WebApp's is my passion. I have plesant
-            knowledge about frontend and backend technologies as I have
-            developed few interesting projects using them. I am currently
-            studying andriod development and DevOps.
+        <v-col md="8" cols="12" data-aos="zoom-in-right">
+          <h3 class="work-font text-justify mobile-font">
+            I am a software engineer, who is filled with enthusiasm about web
+            development, building projects & learning new technologies. I love
+            developing ideas that come to my mind. Learning new technologies is
+            my hobby along with playing games and watching movies. I keep myself
+            up-to-date with the new trends going around the world. Passionate
+            about project planning and development. I have plesant knowledge
+            about frontend and backend technologies as I have developed few
+            interesting projects using them.
           </h3>
           <br />
+          <div
+            class="d-flex align-center mb-2"
+            v-for="(item, id) in items"
+            :key="id"
+          >
+            <i :class="`${item.icon} my-skill-icon mr-4`"></i>
+            <h3 class="mobile-font">{{ item.title }}</h3>
+          </div>
         </v-col>
       </v-row>
     </v-card>
   </section>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      items: [
+        {
+          title: 'Pimpri Chichwad College of Engineering, Pune',
+          icon: 'bx bxs-school'
+        },
+        {
+          title: 'B.E. Computer Engineering',
+          icon: 'bx bxs-book-alt'
+        },
+        {
+          title: 'Expected Graduation 2022',
+          icon: 'bx bxs-graduation'
+        }
+      ]
+    }
+  }
+}
+</script>
+
 <style scoped>
 .my-head-font {
   font-size: 35px;
+}
+.my-skill-icon {
+  font-size: 30px;
 }
 </style>

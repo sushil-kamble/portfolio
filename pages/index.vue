@@ -6,10 +6,10 @@
 
       <About />
       <Skills />
+      <Projects />
       <div data-aos="fade-up">
-        <Projects />
+        <Certificates />
       </div>
-      <Certificates />
     </div>
     <div v-else>
       <v-card height="650" flat class="d-flex justify-center align-center">

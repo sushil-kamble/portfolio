@@ -14,10 +14,16 @@
       color="transparent"
     >
       <v-row no-gutters class="d-flex align-center">
-        <v-col sm="2" cols="12" class="text-center">
+        <v-col
+          sm="2"
+          cols="12"
+          class="text-center"
+          data-aos="zoom-in-right"
+          data-aos-offset="50"
+        >
           <i :class="`${val.icon} primary--text my-skill-icon`"></i>
         </v-col>
-        <v-col sm="10" cols="12">
+        <v-col sm="10" cols="12" data-aos="zoom-out-left" data-aos-offset="50">
           <v-card class="pa-0" flat color="transparent">
             <v-card-title>{{ val.name }}</v-card-title>
             <v-card-text class="font-details work-font"
