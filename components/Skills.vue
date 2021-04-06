@@ -1,5 +1,5 @@
 <template>
-  <section :class="$vuetify.breakpoint.smAndUp && 'px-4'">
+  <section class="sm-up-px4">
     <h1
       class="goldman primary--text my-head-font my-text-center"
       data-aos="fade-right"
@@ -29,8 +29,8 @@
             Expertise in Core Python and Javascript, along with their famous
             framework like django and vue.js respectively. Desent knowlegde
             about Google's Cloud Platform & Firebase. git, github, react.js,
-            nuxt.js, next.js, gatsby, flask, vscode, webstorm, numpy/pandas are
-            some of the libraries/technologies I have used.
+            nuxt.js, next.js, gatsby, flask, MySQL, vscode, webstorm,
+            numpy/pandas are some of the libraries/technologies I have used.
           </h4>
           <v-card class="mb-2" v-for="skill in skills" :key="skill.id">
             <div class="d-flex justify-space-between px-3 align-center">
@@ -44,7 +44,7 @@
               :value="skill.per"
             ></v-progress-linear>
           </v-card>
-          <h6 class="grey--text text--darken-3 work">
+          <h6 class="grey--text work-font">
             Click on MY SKILLS to check out My Skills and also my Technology
             Stack
           </h6>
@@ -103,7 +103,7 @@ export default {
           id: 4,
           name: 'React',
           icon: 'bx bxl-react',
-          per: 75
+          per: 50
         },
         {
           id: 6,

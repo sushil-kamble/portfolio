@@ -48,6 +48,12 @@
 
 @media only screen and (min-width: 960px) {
   /* BORDER BOTTOM */
+  .sm-up-px4 {
+    padding: 0 16px 0 16px;
+  }
+  .sm-up-ma-4 {
+    margin: 16px;
+  }
   .my-margin-bottom-large {
     margin-bottom: 160px;
   }

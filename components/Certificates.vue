@@ -1,10 +1,9 @@
 <template>
-  <section
-    :class="`my-margin-bottom-large ${$vuetify.breakpoint.smAndUp && 'px-4'}`"
-  >
+  <section class="sm-up-px4">
     <h1
       class="goldman primary--text my-head-font my-text-center"
-      data-aos="fade-right"
+      data-aos="zoom-out-right"
+      data-aos-duration="1000"
     >
       Certificates
     </h1>
@@ -12,12 +11,13 @@
       class="primary mb-4"
       data-aos="zoom-in"
       data-aos-delay="100"
-      data-aos-duration="1000"
+      data-aos-duration="1500"
     ></v-divider>
     <v-sheet
-      :class="$vuetify.breakpoint.smAndUp && 'ma-4'"
+      class="sm-up-ma-4"
       color="transparent"
-      data-aos="zoom-out-up"
+      data-aos="zoom-in-up"
+      data-aos-delay="200"
     >
       <v-slide-group
         v-model="model"
@@ -60,35 +60,20 @@
           </v-card>
         </v-slide-item>
       </v-slide-group>
-      <v-expand-transition>
-        <v-sheet
-          v-if="model != null"
-          height="200"
-          elevation="2"
-          max-width="600"
-          class="mx-auto"
-        >
-          <div class="fill-height text-center pa-5">
-            <h2 class="goldman">
-              {{ certificates[model].name }}
-            </h2>
-            <v-divider class="primary"></v-divider>
-            <h4 class="work-font">
-              {{ certificates[model].description }}
-            </h4>
-            <v-btn
-              class="px-4 mt-5"
-              color="secondary"
-              :small="$vuetify.breakpoint.smAndDown"
-              :href="certificates[model].link"
-              target="_blank"
-            >
-              <v-icon left>mdi-arrow-top-right</v-icon>
-              View Certificate
-            </v-btn>
-          </div>
-        </v-sheet>
-      </v-expand-transition>
+      <h6 class="grey--text work-font text-center">
+        To see all my certificates click on the link below
+      </h6>
+      <v-btn
+        large
+        block
+        color="primary"
+        class="mt-2 goldman"
+        outlined
+        target="_black"
+        href="https://drive.google.com/drive/folders/1JkQzuXrddb1A_k4DCSJ7vZfMreMoDSa-?usp=sharing"
+      >
+        My Certificates
+      </v-btn>
     </v-sheet>
   </section>
 </template>

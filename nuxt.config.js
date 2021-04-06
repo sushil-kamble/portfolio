@@ -66,15 +66,15 @@ export default {
         light: {
           primary: colors.blue.accent3,
           secondary: colors.blueGrey.darken4,
-          accent: colors.grey.darken4,
-          accent: colors.shades.black,
+          accent: colors.grey.lighten5,
+          info: colors.grey,
           error: colors.red.accent3
         },
         dark: {
           primary: colors.blueGrey.lighten3,
           secondary: colors.blueGrey.lighten1,
-          accent: colors.grey.lighten4,
-          info: colors.teal.lighten1,
+          accent: colors.grey.darken4,
+          info: colors.grey,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3

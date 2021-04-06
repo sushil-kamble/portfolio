@@ -10,7 +10,7 @@
         :left="$vuetify.breakpoint.smAndUp"
         @mouseover="isHovering1 = true"
         @mouseout="isHovering1 = false"
-        :color="isHovering1 ? 'accent' : ''"
+        :color="isHovering1 ? 'info' : ''"
         >mdi-github
       </v-icon>
     </a>
@@ -24,7 +24,7 @@
         :left="$vuetify.breakpoint.smAndUp"
         @mouseover="isHovering2 = true"
         @mouseout="isHovering2 = false"
-        :color="isHovering2 ? 'accent' : ''"
+        :color="isHovering2 ? 'info' : ''"
         >mdi-linkedin
       </v-icon>
     </a>
@@ -38,7 +38,7 @@
         :left="$vuetify.breakpoint.smAndUp"
         @mouseover="isHovering3 = true"
         @mouseout="isHovering3 = false"
-        :color="isHovering3 ? 'accent' : ''"
+        :color="isHovering3 ? 'info' : ''"
         >mdi-instagram
       </v-icon>
     </a>
@@ -52,7 +52,7 @@
         :left="$vuetify.breakpoint.smAndUp"
         @mouseover="isHovering4 = true"
         @mouseout="isHovering4 = false"
-        :color="isHovering4 ? 'accent' : ''"
+        :color="isHovering4 ? 'info' : ''"
         >mdi-twitter
       </v-icon>
     </a>

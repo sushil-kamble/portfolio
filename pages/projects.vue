@@ -1,71 +1,91 @@
 <template>
   <v-container>
-    <v-row :class="`${$vuetify.breakpoint.smAndUp && 'mx-1'} mb-5`">
-      <v-col md="6" cols="12" v-for="project in projects" :key="project.imgId">
-        <v-img
-          :src="`https://drive.google.com/uc?export=view&id=${project.imgId}`"
-          :lazy-src="`https://drive.google.com/uc?export=view&id=${project.lazyId}`"
-          :aspect-ratio="3 / 2"
-          :gradient="
-            $vuetify.theme.dark
-              ? `76deg, ${hexToRgbA(
-                  $vuetify.theme.themes.dark.primary
-                )} 38%, rgba(0,0,0,0.2) 100%`
-              : `76deg, ${hexToRgbA(
-                  $vuetify.theme.themes.light.primary
-                )} 38%, rgba(58,132,255,0.2) 100%`
-          "
-          class="pa-4"
-          :light="$vuetify.theme.dark"
-          :dark="!$vuetify.theme.dark"
+    <v-card color="pa-2" flat>
+      <h1
+        class="goldman primary--text my-head-font text-center"
+        data-aos="zoom-out-left"
+        data-aos-duration="1000"
+      >
+        MY PROJECTS
+      </h1>
+      <v-divider
+        class="primary mb-4 mx-2"
+        data-aos="zoom-in"
+        data-aos-delay="100"
+        data-aos-duration="2000"
+      ></v-divider>
+      <v-row :class="`${$vuetify.breakpoint.smAndUp && 'mx-1'} mb-5`">
+        <v-col
+          md="6"
+          cols="12"
+          v-for="project in projects"
+          :key="project.imgId"
+          data-aos="zoom-out-left"
+          data-aos-offset="10"
+          :data-aos-delay="project.delay"
         >
-          <h1 class="goldman">{{ project.name }}</h1>
-          <v-divider class="white"></v-divider>
-          <div class="mt-2">
-            <p>
-              {{ project.description }}
-            </p>
-            <h2>Features</h2>
-            <ul>
-              <li v-for="(feature, x) in project.features" :key="x">
-                {{ feature }}
-              </li>
-            </ul>
-            <h2>Tech Stack</h2>
-            <ul>
-              <li v-for="(tech, y) in project.techStack" :key="y">
-                {{ tech }}
-              </li>
-            </ul>
-            <p>
-              <v-btn
-                class="px-4 mt-4"
-                dark
-                :large="$vuetify.breakpoint.smAndUp"
-                :small="$vuetify.breakpoint.smAndDown"
-                :href="project.link"
-                target="_blank"
-                v-if="project.link"
-              >
-                <v-icon left>mdi-arrow-top-right</v-icon>
-                Direct link
-              </v-btn>
-              <v-btn
-                class="px-4 mt-4"
-                dark
-                :large="$vuetify.breakpoint.smAndUp"
-                :small="$vuetify.breakpoint.smAndDown"
-                :href="project.github"
-                target="_blank"
-              >
-                <v-icon left>mdi-github</v-icon>
-                Github
-              </v-btn>
-            </p>
-          </div>
-        </v-img>
-      </v-col>
-    </v-row>
+          <v-img
+            :src="`img/projects/${project.img}`"
+            :aspect-ratio="3 / 2"
+            :gradient="
+              $vuetify.theme.dark
+                ? `76deg, ${hexToRgbA(
+                    $vuetify.theme.themes.dark.accent
+                  )} 38%, rgba(0,0,0,0.2) 100%`
+                : `120deg, ${hexToRgbA(
+                    $vuetify.theme.themes.light.accent
+                  )} 38%, rgba(255,255,255,0.3) 100%`
+            "
+            class="pa-4 rounded-lg elevation-10"
+          >
+            <div class="mobile-font">
+              <h2 class="goldman">{{ project.name }}</h2>
+              <v-divider></v-divider>
+              <div class="mt-2 work-font font-weight-bold">
+                <p>
+                  {{ project.description }}
+                </p>
+                <h2 class="goldman">Features</h2>
+                <ul>
+                  <li v-for="(feature, x) in project.features" :key="x">
+                    {{ feature }}
+                  </li>
+                </ul>
+                <h2 class="goldman">Tech Stack</h2>
+                <ul>
+                  <li v-for="(tech, y) in project.techStack" :key="y">
+                    {{ tech }}
+                  </li>
+                </ul>
+                <p class="goldman">
+                  <v-btn
+                    class="px-4 mt-4 mr-2"
+                    dark
+                    :small="$vuetify.breakpoint.smAndDown"
+                    :href="project.link"
+                    target="_blank"
+                    v-if="project.link"
+                  >
+                    <v-icon left>mdi-arrow-top-right</v-icon>
+                    Direct link
+                  </v-btn>
+                  <v-btn
+                    class="px-4 mt-4"
+                    dark
+                    :small="$vuetify.breakpoint.smAndDown"
+                    :href="project.github"
+                    target="_blank"
+                  >
+                    <v-icon left>mdi-github</v-icon>
+                    Github
+                  </v-btn>
+                </p>
+              </div>
+            </div>
+          </v-img>
+        </v-col>
+      </v-row>
+    </v-card>
   </v-container>
 
   <!-- yzEOTtukOtY3mdYe -->
@@ -79,84 +99,88 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-    ],
+      { hid: 'description', name: 'description', content: '' }
+    ]
   },
   data() {
     return {
       projects: [
         {
           name: 'Advanced Todo List',
-          description: 'this is awesome',
-          imgId: '1zUbCpbaX27EqSr96zFA57GS_tXmT4_oo',
-          lazyId: '1BpNDOgP_VUj366SmTdAN6ykrtNJPoRm8',
+          delay: 0,
+          description:
+            'My Todos is an advance Todo PWA with auth system, timed todo feature and many real-time functionalities.',
+          img: 'todo.png',
           features: [
             'Authentication',
             'Realtime todo sync',
-            'Set a deadline for a todo',
+            'Set a deadline for a todo'
           ],
           techStack: [
             'vue.js, vue-router & vuex',
             'Firebase Auth and Cloud Firestore',
-            'vuetify',
+            'vuetify'
           ],
           link: 'https://allofmytodo.web.app/',
-          github: 'https://github.com/sushil-kamble/advanced-todo',
+          github: 'https://github.com/sushil-kamble/advanced-todo'
         },
         {
           name: 'Chat-hub',
-          description: 'this is awesome',
-          imgId: '1lPUIviHI9rrYpIMK_bGL7ZZt-P_RRnPg',
-          lazyId: '1fN6wVex6ZfILU9vHSlA6kdiRESbu6jVo',
+          delay: 200,
+          description:
+            'ChatHub is a group chat Progressive Web App(PWA) which involving authentication and real-time presence system.',
+          img: 'chathub.png',
           features: [
             'Responsive and Simple UI',
             'Authenticatiion & Realtime Chat Sync',
-            'Realtime Presence',
+            'Realtime Presence'
           ],
           techStack: [
             'vue.js, vue-router & vuex',
             'Firebase Auth and Database',
-            'vuetify',
+            'vuetify'
           ],
           link: 'https://chatonweb-chathub.web.app/',
-          github: 'https://github.com/sushil-kamble/chat-hub',
-        },
-        {
-          name: 'Movie Hub',
-          description: 'this is awesome',
-          imgId: '14WYWKXGe7Ha16oVWdS_6h9pwfozwnmnJ',
-          lazyId: '1N4M41ivHVuooVC-9TQN2uEwAtwZ0aylF',
-          features: [
-            'Authentication',
-            'Recommendation System & Chat System',
-            'Watchlist, Reviews and Rating',
-          ],
-          techStack: [
-            'Django, Django-channels and rest-framework',
-            'Pandas, Numpy, bs4, Requests',
-            'Vue.js & Bootstrap',
-          ],
-          github: 'https://github.com/sushil-kamble/movie-recommender',
+          github: 'https://github.com/sushil-kamble/chat-hub'
         },
         {
           name: 'Transaction Dairy',
-          description: 'this is awesome',
-          imgId: '1D3CK-oZOXCHMb1RNANdAhbOl1v-QJTO-',
-          lazyId: '117B1SQ7kNsVxArZU81h95N5JDfj7GhMB',
+          delay: 400,
+          description:
+            'Transaction Diary is a PWA where you can make a note of credit that your friend has borrowed from you.',
+          img: 'transfer.png',
           features: [
             'Authentication',
             'Responsive and simple UI',
-            'Realtime Updates',
+            'Realtime Updates'
           ],
           techStack: [
             'vue.js, vue-router & vuex',
             'Firebase Auth and Cloud Firestore',
-            'vuetify',
+            'vuetify'
           ],
           link: 'https://my-transfers.web.app/',
-          github: 'https://github.com/sushil-kamble/transactions-diary',
+          github: 'https://github.com/sushil-kamble/transactions-diary'
         },
-      ],
+        {
+          name: 'Movie Hub',
+          delay: 600,
+          description:
+            'Movie Hub is complete platform for movie lovers, with recommendation, chat, movie filtering system, watchlist and reviews.',
+          img: 'rec.jpg',
+          features: [
+            'Authentication',
+            'Recommendation System & Chat System',
+            'Watchlist, Reviews and Rating'
+          ],
+          techStack: [
+            'Django, Django-channels and rest-framework',
+            'Pandas, Numpy, bs4, Requests',
+            'Vue.js & Bootstrap'
+          ],
+          github: 'https://github.com/sushil-kamble/movie-recommender'
+        }
+      ]
     }
   },
   methods: {
@@ -175,7 +199,7 @@ export default {
         )
       }
       throw new Error('Bad Hex')
-    },
-  },
+    }
+  }
 }
 </script>

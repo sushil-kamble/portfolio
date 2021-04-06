@@ -1,10 +1,9 @@
 <template>
-  <section
-    :class="`my-margin-bottom-large ${$vuetify.breakpoint.smAndUp && 'px-4'}`"
-  >
+  <section class="my-margin-bottom-large sm-up-px4">
     <h1
       class="goldman primary--text my-head-font my-text-center"
-      data-aos="fade-right"
+      data-aos="zoom-out-right"
+      data-aos-duration="1000"
     >
       Projects
     </h1>
@@ -12,11 +11,13 @@
       class="primary mb-4"
       data-aos="zoom-in"
       data-aos-delay="100"
-      data-aos-duration="1000"
+      data-aos-duration="1500"
     ></v-divider>
     <v-sheet
-      :class="`${$vuetify.breakpoint.smAndUp && 'ma-4'}`"
+      class="sm-up-ma-4"
       color="transparent"
+      data-aos="zoom-in-up"
+      data-aos-delay="200"
     >
       <v-slide-group
         v-model="model"
@@ -24,7 +25,6 @@
         center-active
         :active-class="$vuetify.theme.dark ? 'accent' : 'primary'"
         :show-arrows="$vuetify.breakpoint.mdAndUp"
-        data-aos="zoom-out-up"
       >
         <v-slide-item
           v-for="n in projects.length"
@@ -42,16 +42,16 @@
               :aspect-ratio="1 / 1"
             ></v-img>
             <h1
-              :class="`text-center goldman ${active && 'black--text'} ${
-                $vuetify.breakpoint.smAndDown && 'mobile-font'
+              :class="`text-center goldman mobile-font ${
+                active && 'black--text'
               }`"
               v-if="$vuetify.theme.dark"
             >
               {{ projects[n - 1].name }}
             </h1>
             <h1
-              :class="`text-center goldman ${active && 'white--text'} ${
-                $vuetify.breakpoint.smAndDown && 'mobile-font'
+              :class="`text-center goldman mobile-font ${
+                active && 'white--text'
               }`"
               v-else
             >
@@ -68,18 +68,20 @@
           max-width="600"
           class="mx-auto"
         >
-          <div class="fill-height text-center pa-5">
+          <div class="fill-height text-center work-font mobile-font pa-5">
             <h2 class="goldman">
               {{ projects[model].name }}
             </h2>
             <v-divider class="primary"></v-divider>
-            <h4 class="work-font">
+            <h4>
               {{ projects[model].description }}
             </h4>
-            <p class="text-caption my-2">For more info see project page.</p>
-            <p>
+            <p class="my-2" style="font-size: 9px">
+              For info about technology stack, see the project page
+            </p>
+            <p class="goldman">
               <v-btn
-                class="px-4"
+                class="px-3 mr-2"
                 color="secondary"
                 :small="$vuetify.breakpoint.smAndDown"
                 :href="projects[model].link"
@@ -90,7 +92,7 @@
                 Direct link
               </v-btn>
               <v-btn
-                class="px-4"
+                class="px-3"
                 color="secondary"
                 :small="$vuetify.breakpoint.smAndDown"
                 :href="projects[model].github"
@@ -124,37 +126,41 @@ export default {
     projects: [
       {
         name: 'Advanced Todo',
-        description: 'In this application we can set timer for a todo.',
+        description:
+          'My Todos is an advance Todo PWA with auth system, timed todo feature and many real-time functionalities.',
         img: 'todo.png',
         link: 'https://allofmytodo.web.app/',
         github: 'https://github.com/sushil-kamble/advanced-todo'
       },
       {
-        name: 'Chat-hub',
-        description: 'This is a group chat application.',
+        name: 'Chat Hub',
+        description:
+          'ChatHub is a group chat Progressive Web App(PWA) which involving authentication and real-time presence system.',
         img: 'chathub.png',
         link: 'https://chatonweb-chathub.web.app/',
         github: 'https://github.com/sushil-kamble/chat-hub'
       },
       {
-        name: 'Movie Hub',
-        description: 'this is awesome',
-        img: 'rec.jpg',
-        github: 'https://github.com/sushil-kamble/movie-recommender'
-      },
-      {
         name: 'Transaction Dairy',
-        description: 'this is awesome',
+        description:
+          'Transaction Diary is a PWA where you can make a note of credit that your friend has borrowed from you.',
         img: 'transfer.png',
         link: 'https://my-transfers.web.app/',
         github: 'https://github.com/sushil-kamble/transactions-diary'
+      },
+      {
+        name: 'Movie Hub',
+        description:
+          'Movie Hub is complete platform for movie lovers, with recommendation, chat, movie filtering system, watchlist and reviews.',
+        img: 'rec.jpg',
+        github: 'https://github.com/sushil-kamble/movie-recommender'
       }
     ]
   })
 }
 </script>
 
-<style scoped>
+<style>
 .my-head-font {
   font-size: 35px;
 }

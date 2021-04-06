@@ -35,7 +35,7 @@
         </v-col>
         <v-col md="8" cols="12" data-aos="zoom-in-right">
           <h3 class="work-font text-justify mobile-font">
-            I am a software engineer, who is filled with enthusiasm about web
+            I am a computer engineer, who is filled with enthusiasm about web
             development, building projects & learning new technologies. I love
             developing ideas that come to my mind. Learning new technologies is
             my hobby along with playing games and watching movies. I keep myself
@@ -46,7 +46,7 @@
           </h3>
           <br />
           <div
-            class="d-flex align-center mb-2"
+            class="d-flex align-center work-font mb-2"
             v-for="(item, id) in items"
             :key="id"
           >
