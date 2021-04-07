@@ -21,23 +21,23 @@
       <div v-else-if="$vuetify.breakpoint.smAndUp && reveal">
         <v-btn text to="/" nuxt color="primary">
           <span :class="$vuetify.theme.dark ? 'white--text' : 'black--text'"
-            >Home</span
-          >
+            >Home
+          </span>
         </v-btn>
-        <v-btn text nuxt to="/skills" color="primary">
-          <span :class="$vuetify.theme.dark ? 'white--text' : 'black--text'"
-            >Skills</span
-          >
+        <v-btn text to="/skills" nuxt color="primary">
+          <span :class="$vuetify.theme.dark ? 'white--text' : 'black--text'">
+            Skills
+          </span>
         </v-btn>
         <v-btn text to="/projects" nuxt color="primary">
-          <span :class="$vuetify.theme.dark ? 'white--text' : 'black--text'"
-            >Projects</span
-          >
+          <span :class="$vuetify.theme.dark ? 'white--text' : 'black--text'">
+            Projects
+          </span>
         </v-btn>
-        <v-btn text nuxt to="/contact" color="primary">
-          <span :class="$vuetify.theme.dark ? 'white--text' : 'black--text'"
-            >Contact</span
-          >
+        <v-btn text to="/contact" nuxt color="primary">
+          <span :class="$vuetify.theme.dark ? 'white--text' : 'black--text'">
+            Contact
+          </span>
         </v-btn>
       </div>
     </v-app-bar>

@@ -14,14 +14,26 @@
           </h1>
 
           <h1 class="goldman">I am a WebApp Developer</h1>
-          <v-btn
-            color="primary"
-            :class="`mt-7 goldman ${$vuetify.theme.dark && 'black--text'}`"
-            large
-            to="/contact"
-          >
-            Contact
-          </v-btn>
+          <div class="mt-7 goldman">
+            <v-btn
+              color="primary"
+              :class="`${$vuetify.theme.dark && 'black--text'}`"
+              large
+              href="https://drive.google.com/file/d/1y7k-psiq7QVYnCb_2LhF-gaRSyhD7lX1/view?usp=sharing"
+              target="_blank"
+            >
+              Resume
+            </v-btn>
+            <v-btn
+              color="primary"
+              :class="`ml-4 ${$vuetify.theme.dark && 'black--text'}`"
+              large
+              to="/contact"
+            >
+              Contact
+            </v-btn>
+          </div>
+
           <div class="mt-10">
             <Icons />
           </div>

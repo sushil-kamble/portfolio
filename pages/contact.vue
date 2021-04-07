@@ -1,6 +1,6 @@
 <template>
-  <v-card max-width="600" class="mt-2 pa-4 mx-auto" data-aos="zoom-in">
-    <v-form autocomplete="off" name="google-sheet">
+  <v-card max-width="600" class="mt-2 pa-4 mx-auto">
+    <v-form autocomplete="off" name="google-sheet" data-aos="zoom-in">
       <h2 class="goldman mb-4">Contact</h2>
       <v-text-field
         label="Name"
