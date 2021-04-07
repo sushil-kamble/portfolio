@@ -1,9 +1,46 @@
 <template>
   <v-container>
-    <SkillsRow name="Front End" :iter="frontend" />
-    <SkillsRow name="Back End" :iter="backend" />
-    <SkillsRow name="Technology Stack" :iter="techStack" />
-    <SkillsRow name="Working On" :iter="workOn" />
+    <v-card flat class="sm-up-px4 pb-2 transparent">
+      <h1
+        class="goldman primary--text my-head-font my-text-center"
+        data-aos="zoom-out-left"
+        data-aos-duration="1000"
+      >
+        MY SKILLS
+      </h1>
+      <v-divider
+        class="primary mb-2"
+        data-aos="zoom-in"
+        data-aos-delay="100"
+        data-aos-duration="2000"
+      ></v-divider>
+      <h2 v-if="$fetchState.pending" class="work-font">Fetching Data...</h2>
+      <div v-else data-aos="zoom-out" data-aos-duration="1000">
+        <v-chip-group class="work-font" column>
+          <v-chip
+            v-for="(tag, i) in tags"
+            :key="i"
+            class="my-text-center"
+            label
+            link
+            outlined
+            :href="tag.link"
+            target="_blank"
+          >
+            {{ tag.name }}
+          </v-chip>
+        </v-chip-group>
+      </div>
+
+      <v-divider
+        class="primary my-2"
+        data-aos="zoom-in"
+        data-aos-delay="100"
+        data-aos-duration="2000"
+      ></v-divider>
+      <SkillsRow name="Favourites" :iter="favTech" />
+      <SkillsRow name="Working On" :iter="workOn" />
+    </v-card>
   </v-container>
 </template>
 
@@ -15,105 +52,53 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-    ],
+      { hid: 'description', name: 'description', content: '' }
+    ]
   },
   data() {
     return {
-      frontend: [
+      tags: [],
+      favTech: [
         {
-          id: 1,
-          name: 'HTML5',
-          icon: 'bx bxl-html5',
-          per: 85,
-        },
-        {
-          id: 2,
-          name: 'CSS3',
-          icon: 'bx bxl-css3',
-          per: 60,
-        },
-        {
-          id: 3,
-          name: 'Javascript',
-          icon: 'bx bxl-javascript',
-          per: 75,
-        },
-        {
-          id: 4,
           name: 'Vue',
           icon: 'bx bxl-vuejs',
-          per: 75,
+          desp:
+            'Get better a vue.js every single day, Have a in-depth knowlegde of vue framework as I have done few interesting projects using the same. I am quite familier with Vuex, Vue Router & also Nuxt.js.'
         },
         {
-          id: 5,
-          name: 'React',
-          icon: 'bx bxl-react',
-          per: 75,
-        },
-      ],
-      backend: [
-        {
-          id: 1,
-          name: 'Python',
-          icon: 'bx bxl-python',
-          per: 75,
-        },
-        {
-          id: 2,
-          name: 'Django',
-          icon: 'bx bxl-django',
-          per: 75,
-        },
-        {
-          id: 3,
           name: 'Firebase',
           icon: 'bx bxl-firebase',
-          per: 75,
-        },
-      ],
-      techStack: [
-        {
-          id: 1,
-          name: 'Vuejs +  Firebase',
-          icon: 'bx bxl-vuejs',
-          per: 75,
+          desp:
+            'Done many projects using Firbase Authetication Service, Realtime DB, Cloud Firestore. Have a good knowledge about the query structure of Firestore.'
         },
         {
-          id: 2,
-          name: 'Django Rest Framework + Vuejs',
+          name: 'Django',
           icon: 'bx bxl-django',
-          per: 75,
-        },
-        {
-          id: 3,
-          name: 'MERN',
-          icon: 'bx bxl-react',
-          per: 75,
-        },
+          desp:
+            'Python being my most favourite language, pushed me towards django framework. Have a good hold over authetication, CRUD operations, jinja templating etc.'
+        }
       ],
       workOn: [
         {
-          id: 1,
-          name: 'Kotlin',
-          icon: 'bx bxl-android',
-          per: 75,
-        },
-        {
-          id: 2,
-          name: 'Data Structures and Algorithms',
+          name: 'DS ALGO',
           icon: 'bx bxs-data',
-          per: 75,
+          desp:
+            'Brushing up my Data Structures and Algorithms skills by frequently solving problems on HackerRank and HackerEarth.'
         },
         {
-          id: 3,
           name: 'Dev Ops',
           icon: 'bx bxl-kubernetes',
-          per: 75,
-        },
-      ],
+          desp:
+            'Signed in for Google Cloud Training to learn Kubernetes and get a hands on experience.'
+        }
+      ]
     }
   },
+  async fetch() {
+    this.tags = await fetch(
+      'https://sushil-kamble-default-rtdb.firebaseio.com/tags.json'
+    ).then((res) => res.json())
+  }
 }
 </script>
 

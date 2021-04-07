@@ -1,15 +1,16 @@
 <template>
   <v-container>
-    <v-card color="pa-2" flat>
+    <v-card class="sm-up-px4 pb-2 transparent" flat>
       <h1
-        class="goldman primary--text my-head-font text-center"
+        class="goldman primary--text my-head-font my-text-center"
         data-aos="zoom-out-left"
+        data-aos-delay="0"
         data-aos-duration="1000"
       >
         MY PROJECTS
       </h1>
       <v-divider
-        class="primary mb-4 mx-2"
+        class="primary mb-4"
         data-aos="zoom-in"
         data-aos-delay="100"
         data-aos-duration="2000"

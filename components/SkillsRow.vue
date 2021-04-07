@@ -1,18 +1,9 @@
 <template>
   <div class="mb-4">
-    <h1
-      :class="`goldman mb-4 ${
-        $vuetify.breakpoint.smAndUp && 'my-head-font px-3'
-      }`"
-    >
+    <h1 class="goldman mb-2 sm-heading-font">
       {{ name }}
     </h1>
-    <v-sheet
-      :class="`${$vuetify.breakpoint.smAndUp && 'mx-3'}`"
-      v-for="val in iter"
-      :key="val.id"
-      color="transparent"
-    >
+    <v-sheet v-for="(val, i) in iter" :key="i" color="transparent">
       <v-row no-gutters class="d-flex align-center">
         <v-col
           sm="2"
@@ -24,13 +15,11 @@
           <i :class="`${val.icon} primary--text my-skill-icon`"></i>
         </v-col>
         <v-col sm="10" cols="12" data-aos="zoom-out-left" data-aos-offset="50">
-          <v-card class="pa-0" flat color="transparent">
-            <v-card-title>{{ val.name }}</v-card-title>
-            <v-card-text class="font-details work-font"
-              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-              suscipit ab mollitia molestiae eos error aut officia excepturi
-              architecto velit.
-            </v-card-text>
+          <v-card class="pa-0 ma-0 work-font" flat color="transparent">
+            <h2 class="mb-1">{{ val.name }}</h2>
+            <p class="mobile-font">
+              {{ val.desp }}
+            </p>
           </v-card>
         </v-col>
       </v-row>
@@ -51,8 +40,5 @@ export default {
 }
 .my-skill-icon {
   font-size: 120px;
-}
-.font-details {
-  font-size: 20px;
 }
 </style>

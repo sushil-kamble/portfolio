@@ -28,6 +28,7 @@
           >
             <v-img
               src="img/hero.jpg"
+              lazy-src="img/hero_com.jpg"
               class="max-height-img"
               :contain="$vuetify.breakpoint.smAndUp"
             ></v-img>

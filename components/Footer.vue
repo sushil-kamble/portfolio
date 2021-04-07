@@ -1,17 +1,21 @@
 <template>
-  <v-footer color="primary lighten-1" padless>
+  <v-footer padless>
     <v-row justify="center" no-gutters dense>
       <div
         :class="`py-3 flex-grow-1 text-center ${
-          !$vuetify.theme.dark ? 'white' : 'primary darken-3'
+          !$vuetify.theme.dark ? 'grey lighten-2' : 'primary darken-2'
         }`"
       >
-        <v-divider class="mb-3"></v-divider>
         <Icons />
       </div>
-      <v-col class="primary darken-2 text-center white--text" cols="12">
-        {{ new Date().getFullYear() }} —
-        <strong>
+      <v-col
+        :class="`primary darken-3 text-center work-font ${
+          $vuetify.theme.dark && 'black--text'
+        }`"
+        cols="12"
+      >
+        <strong class="white--text">
+          {{ new Date().getFullYear() }} —
           <a
             href="https://www.sushilkamble.live/"
             class="text-decoration-none white--text"

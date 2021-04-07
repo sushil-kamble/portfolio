@@ -46,10 +46,7 @@
       <v-list nav>
         <v-list-item-group v-model="group">
           <v-list-item>
-            <v-img
-              :lazy-src="`https://drive.google.com/uc?export=view&id=${meIdMin}`"
-              :src="`https://drive.google.com/uc?export=view&id=${meId}`"
-            ></v-img>
+            <v-img lazy-src="img/me_supermin.jpg" src="img/me_min.jpg"></v-img>
           </v-list-item>
 
           <v-list-item>

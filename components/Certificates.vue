@@ -13,68 +13,65 @@
       data-aos-delay="100"
       data-aos-duration="1500"
     ></v-divider>
-    <v-sheet
-      class="sm-up-ma-4"
-      color="transparent"
-      data-aos="zoom-in-up"
-      data-aos-delay="200"
-    >
-      <v-slide-group
-        v-model="model"
-        :class="$vuetify.breakpoint.smAndUp && 'pa-3'"
-        center-active
-        :active-class="$vuetify.theme.dark ? 'accent' : 'primary'"
-        :show-arrows="$vuetify.breakpoint.mdAndUp"
-      >
-        <v-slide-item
-          v-for="n in certificates.length"
-          :key="n"
-          v-slot="{ active, toggle }"
+    <div data-aos="zoom-in-up" data-aos-delay="100">
+      <v-sheet class="sm-up-ma-4" color="transparent">
+        <v-slide-group
+          v-model="model"
+          :class="$vuetify.breakpoint.smAndUp && 'pa-3'"
+          center-active
+          :active-class="$vuetify.theme.dark ? 'accent' : 'primary accent-3'"
+          :show-arrows="$vuetify.breakpoint.mdAndUp"
         >
-          <v-card
-            class="ma-3 grow"
-            :width="$vuetify.breakpoint.smAndUp ? 300 : 180"
-            @click="toggle"
+          <v-slide-item
+            v-for="n in certificates.length"
+            :key="n"
+            v-slot="{ active, toggle }"
           >
-            <v-img
-              :src="`img/certificates/${certificates[n - 1].img}`"
-              :height="$vuetify.breakpoint.smAndDown ? 150 : 180"
-              contain
-            ></v-img>
-            <h2
-              :class="`text-center goldman ${active && 'black--text'} ${
-                $vuetify.breakpoint.smAndDown && 'mobile-font'
-              }`"
-              v-if="$vuetify.theme.dark"
+            <v-card
+              class="ma-3 grow"
+              :width="$vuetify.breakpoint.smAndUp ? 300 : 180"
+              @click="toggle"
             >
-              {{ certificates[n - 1].name }}
-            </h2>
-            <h2
-              :class="`text-center goldman ${active && 'white--text'} ${
-                $vuetify.breakpoint.smAndDown && 'mobile-font'
-              }`"
-              v-else
-            >
-              {{ certificates[n - 1].name }}
-            </h2>
-          </v-card>
-        </v-slide-item>
-      </v-slide-group>
-      <h6 class="grey--text work-font text-center">
-        To see all my certificates click on the link below
-      </h6>
-      <v-btn
-        large
-        block
-        color="primary"
-        class="mt-2 goldman"
-        outlined
-        target="_black"
-        href="https://drive.google.com/drive/folders/1JkQzuXrddb1A_k4DCSJ7vZfMreMoDSa-?usp=sharing"
-      >
-        My Certificates
-      </v-btn>
-    </v-sheet>
+              <v-img
+                :src="`img/certificates/${certificates[n - 1].img}`"
+                :height="$vuetify.breakpoint.smAndDown ? 150 : 180"
+                contain
+              ></v-img>
+              <h2
+                :class="`text-center goldman ${active && 'black--text'} ${
+                  $vuetify.breakpoint.smAndDown && 'mobile-font'
+                }`"
+                v-if="$vuetify.theme.dark"
+              >
+                {{ certificates[n - 1].name }}
+              </h2>
+              <h2
+                :class="`text-center goldman ${active && 'white--text'} ${
+                  $vuetify.breakpoint.smAndDown && 'mobile-font'
+                }`"
+                v-else
+              >
+                {{ certificates[n - 1].name }}
+              </h2>
+            </v-card>
+          </v-slide-item>
+        </v-slide-group>
+        <h6 class="grey--text work-font text-center">
+          To see all my certificates click on the link below
+        </h6>
+        <v-btn
+          large
+          block
+          color="primary"
+          class="mt-2 goldman"
+          outlined
+          target="_black"
+          href="https://drive.google.com/drive/folders/1JkQzuXrddb1A_k4DCSJ7vZfMreMoDSa-?usp=sharing"
+        >
+          My Certificates
+        </v-btn>
+      </v-sheet>
+    </div>
   </section>
 </template>
 

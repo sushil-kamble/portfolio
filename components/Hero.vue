@@ -35,9 +35,10 @@
       v-if="$vuetify.breakpoint.mdAndUp"
       data-aos="zoom-out-right"
     >
-      <img
-        src="~/assets/img/hero2.svg"
+      <v-img
+        src="img/hero2.svg"
         height="380"
+        contain
         v-if="!$vuetify.theme.dark && reveal"
       />
     </v-col>

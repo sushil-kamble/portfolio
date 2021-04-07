@@ -55,6 +55,7 @@
               :aspect-ratio="8 / 7"
               max-height="360"
               src="img/skills.jpg"
+              lazy-src="img/skills_com.jpg"
             ></v-img>
           </v-card>
         </v-col>
