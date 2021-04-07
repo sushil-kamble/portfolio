@@ -38,16 +38,16 @@
                 contain
               ></v-img>
               <h2
-                :class="`text-center goldman ${active && 'black--text'} ${
-                  $vuetify.breakpoint.smAndDown && 'mobile-font'
-                }`"
+                :class="`text-center goldman mobile-font px-1 ${
+                  active && 'black--text'
+                } `"
                 v-if="$vuetify.theme.dark"
               >
                 {{ certificates[n - 1].name }}
               </h2>
               <h2
-                :class="`text-center goldman ${active && 'white--text'} ${
-                  $vuetify.breakpoint.smAndDown && 'mobile-font'
+                :class="`text-center goldman mobile-font px-1 ${
+                  active && 'white--text'
                 }`"
                 v-else
               >
@@ -82,31 +82,23 @@ export default {
     certificates: [
       {
         name: 'Applied Data Science with Python',
-        description: 'In this application we can set timer for a todo.',
-        img: 'applied_data_science.jpg',
-        link:
-          'https://www.coursera.org/account/accomplishments/specialization/certificate/P27GDLJU9AXU'
+        img: 'applied_data_science.jpg'
       },
       {
         name: 'Introduction to Data Science',
-        description: 'This is a group chat application.',
-        img: 'intro_to_data_science.jpg',
-        link:
-          'https://www.coursera.org/account/accomplishments/specialization/certificate/VG7VXC75AYS3'
+        img: 'intro_to_data_science.jpg'
       },
       {
         name: 'Neural Network and Deep Learning',
-        description: 'this is awesome',
-        img: 'deep_learning.jpg',
-        link:
-          'https://www.coursera.org/account/accomplishments/certificate/KWV9EZWBJ66B'
+        img: 'deep_learning.jpg'
       },
       {
         name: 'Using Python to Access Web Data',
-        description: 'this is awesome',
-        img: 'using_python_access_web_data.jpg',
-        link:
-          'https://www.coursera.org/account/accomplishments/certificate/EKGC3AP3NHZE'
+        img: 'using_python_access_web_data.jpg'
+      },
+      {
+        name: 'Applied Machine Learning in Python',
+        img: 'applied_machine_learning_in_python.jpg'
       }
     ]
   })

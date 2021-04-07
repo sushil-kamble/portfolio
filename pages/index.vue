@@ -3,13 +3,10 @@
   <v-container>
     <div v-if="reveal">
       <Hero />
-
       <About />
       <Skills />
       <Projects />
-      <div data-aos="fade-up">
-        <Certificates />
-      </div>
+      <Certificates />
     </div>
     <div v-else>
       <v-card height="650" flat class="d-flex justify-center align-center">
