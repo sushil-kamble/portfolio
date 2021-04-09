@@ -2,7 +2,7 @@
   <section class="sm-up-px4">
     <h1
       class="goldman primary--text my-head-font my-text-center"
-      data-aos="zoom-out-right"
+      data-aos="fade-right"
       data-aos-duration="1000"
     >
       Certificates

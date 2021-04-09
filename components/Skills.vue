@@ -13,17 +13,11 @@
       data-aos-duration="1000"
     ></v-divider>
     <v-card
-      :class="`my-margin-bottom-large ${
-        $vuetify.breakpoint.smAndUp ? 'mt-6 px-4' : 'mt-6'
-      }`"
+      class="my-margin-bottom-large mt-6 sm-up-px4"
       flat
       color="transparent"
     >
-      <v-row
-        :class="`${
-          $vuetify.breakpoint.smAndDown && 'd-flex flex-column-reverse'
-        }`"
-      >
+      <v-row class="sm-col-rev">
         <v-col md="6" class="hero-two" cols="12" data-aos="zoom-out-left">
           <h4 class="mb-4 work-font my-text-center text-justify">
             Expertise in Core Python and Javascript, along with their famous
@@ -78,9 +72,6 @@
 export default {
   data() {
     return {
-      topSkills: [],
-      skillImg: '1sXGoYAzprv9FNmUO1LgFYwk9ibhAtC7S',
-      skillImgMin: '1od9XCRaVjYqv8W1RfrOqkzcYqxFR76Mm',
       skills: [
         {
           id: 1,
@@ -114,11 +105,6 @@ export default {
         }
       ]
     }
-  },
-  async fetch() {
-    this.topSkills = await fetch(
-      'https://sushil-kamble-default-rtdb.firebaseio.com/users/Y7ydFmn3A2ekCeNA8V2QM6EZTnz1/top-skills.json'
-    ).then((res) => res.json())
   }
 }
 </script>

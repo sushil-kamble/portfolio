@@ -75,7 +75,7 @@ export default {
           name: 'Django',
           icon: 'bx bxl-django',
           desp:
-            'Python being my most favourite language, pushed me towards django framework. Have a good hold over authetication, CRUD operations, jinja templating etc.'
+            'Python being my most favourite language, pushed me towards django framework. Have a good hold over authentication, CRUD operations, jinja templating etc.'
         }
       ],
       workOn: [
@@ -94,6 +94,7 @@ export default {
       ]
     }
   },
+  fetchOnServer: false,
   async fetch() {
     this.tags = await fetch(
       'https://sushil-kamble-default-rtdb.firebaseio.com/tags.json'

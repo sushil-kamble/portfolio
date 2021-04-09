@@ -1,19 +1,14 @@
 <template>
   <v-row class="px-4">
-    <v-col md="6" data-aos="zoom-in-left">
-      <v-card
-        color="transparent"
-        :height="$vuetify.breakpoint.smAndDown ? 500 : 650"
-        class="hero-one"
-        flat
-      >
-        <div :class="`${$vuetify.breakpoint.smAndDown && 'text-center'}`">
+    <v-col md="6">
+      <v-card color="transparent sm-hero-height" class="hero-one" flat>
+        <div class="my-text-center">
           <h4 class="goldman text-uppercase text--secondary">hey there</h4>
-          <h1 :class="`goldman ${$vuetify.breakpoint.mdAndUp && 'cos-name'}`">
+          <h1 class="goldman i-am-sushil">
             I am <span class="primary--text">Sushil</span>
           </h1>
 
-          <h1 class="goldman">I am a WebApp Developer</h1>
+          <h1 class="goldman">I am a Web Developer</h1>
           <div class="mt-7 goldman">
             <v-btn
               color="primary"
@@ -43,9 +38,8 @@
 
     <v-col
       md="6"
-      class="hero-two d-flex justify-end"
+      class="hero-two d-flex justify-end hide-intro-img"
       v-if="$vuetify.breakpoint.mdAndUp"
-      data-aos="zoom-out-right"
     >
       <v-img
         src="img/hero2.svg"
