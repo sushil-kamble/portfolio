@@ -2,10 +2,9 @@
   <v-responsive>
     <v-app-bar
       app
-      class="container"
-      :color="$vuetify.theme.dark ? '#121212' : 'white'"
+      class="container background"
+      elevate-on-scroll
       height="70"
-      max-width="1181"
       tag="header"
       flat
     >
@@ -16,28 +15,21 @@
       <v-app-bar-nav-icon
         v-if="$vuetify.breakpoint.smAndDown && reveal"
         @click.stop="drawer = !drawer"
-      ></v-app-bar-nav-icon>
+        ><i class="bx bxs-category icon-font"></i>
+      </v-app-bar-nav-icon>
 
-      <div v-else-if="$vuetify.breakpoint.smAndUp && reveal">
-        <v-btn text to="/" nuxt color="primary">
-          <span :class="$vuetify.theme.dark ? 'white--text' : 'black--text'"
-            >Home
-          </span>
+      <div v-else-if="$vuetify.breakpoint.smAndUp && reveal" class="goldman">
+        <v-btn text to="/" nuxt>
+          <span>Home </span>
         </v-btn>
-        <v-btn text to="/skills" nuxt color="primary">
-          <span :class="$vuetify.theme.dark ? 'white--text' : 'black--text'">
-            Skills
-          </span>
+        <v-btn text to="/skills" nuxt>
+          <span> Skills </span>
         </v-btn>
-        <v-btn text to="/projects" nuxt color="primary">
-          <span :class="$vuetify.theme.dark ? 'white--text' : 'black--text'">
-            Projects
-          </span>
+        <v-btn text to="/projects" nuxt>
+          <span> Projects </span>
         </v-btn>
-        <v-btn text to="/contact" nuxt color="primary">
-          <span :class="$vuetify.theme.dark ? 'white--text' : 'black--text'">
-            Contact
-          </span>
+        <v-btn text to="/contact" nuxt>
+          <span> Contact </span>
         </v-btn>
       </div>
     </v-app-bar>
@@ -92,11 +84,10 @@
 <script>
 export default {
   data: () => ({
-    meId: '1PMUdprSvyYHadTR-LmqbMpy5oLE08Bwu',
-    meIdMin: '1smrkjOMaF1a0xGthvNKhljd0FH5FkrIs',
     drawer: false,
     group: null,
-    reveal: false
+    reveal: false,
+    scrollPosition: null
   }),
 
   watch: {
@@ -105,19 +96,24 @@ export default {
     }
   },
   mounted() {
+    window.addEventListener('scroll', this.updateScroll)
     this.$nextTick(() => {
       this.$nuxt.$loading.start()
       setTimeout(() => this.loadingFinish())
     })
   },
+
   methods: {
     loadingFinish() {
       this.$nuxt.$loading.finish()
       this.reveal = true
+    },
+    updateScroll() {
+      this.scrollPosition = window.scrollY
     }
+  },
+  destroyed() {
+    window.removeEventListener('scroll')
   }
 }
 </script>
-
-<style scoped>
-</style>

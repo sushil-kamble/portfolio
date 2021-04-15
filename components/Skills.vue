@@ -26,7 +26,12 @@
             nuxt.js, next.js, gatsby, flask, MySQL, vscode, webstorm,
             numpy/pandas are some of the libraries/technologies I have used.
           </h4>
-          <v-card class="mb-2" v-for="skill in skills" :key="skill.id">
+          <v-card
+            class="mb-2 transparent"
+            elevation="6"
+            v-for="skill in skills"
+            :key="skill.id"
+          >
             <div class="d-flex justify-space-between px-3 align-center">
               <i :class="`${skill.icon} primary--text my-skill-icon`"></i>
               <h4 class="goldman pt-1">{{ skill.name }}</h4>
@@ -38,9 +43,8 @@
               :value="skill.per"
             ></v-progress-linear>
           </v-card>
-          <h6 class="grey--text work-font">
-            Click on MY SKILLS to check out My Skills and also my Technology
-            Stack
+          <h6 class="grey--text work-font mt-4">
+            Click on MY SKILLS to get more info.
           </h6>
         </v-col>
         <v-col md="6" cols="12" data-aos="zoom-in-right">
@@ -98,7 +102,7 @@ export default {
           per: 50
         },
         {
-          id: 6,
+          id: 5,
           name: 'Firebase',
           icon: 'bx bxl-firebase',
           per: 80

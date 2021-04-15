@@ -15,7 +15,7 @@
         data-aos-delay="100"
         data-aos-duration="2000"
       ></v-divider>
-      <v-row :class="`${$vuetify.breakpoint.smAndUp && 'mx-1'} mb-5`">
+      <v-row class="mb-5">
         <v-col
           md="6"
           cols="12"
@@ -28,16 +28,10 @@
           <v-img
             :src="`img/projects/${project.img}`"
             :aspect-ratio="3 / 2"
-            :gradient="
-              $vuetify.theme.dark
-                ? `76deg, ${hexToRgbA(
-                    $vuetify.theme.themes.dark.accent
-                  )} 38%, rgba(0,0,0,0.2) 100%`
-                : `120deg, ${hexToRgbA(
-                    $vuetify.theme.themes.light.accent
-                  )} 38%, rgba(255,255,255,0.3) 100%`
-            "
-            class="pa-4 rounded-lg elevation-10"
+            :gradient="`76deg, ${hexToRgbA(
+              $vuetify.theme.themes.dark.accent
+            )} 38%, rgba(0,0,0,0.2) 100%`"
+            class="pa-4 white--text rounded-lg elevation-10"
           >
             <div class="mobile-font">
               <h2 class="goldman">{{ project.name }}</h2>
@@ -46,13 +40,13 @@
                 <p>
                   {{ project.description }}
                 </p>
-                <h2 class="goldman">Features</h2>
+                <h3 class="goldman">Features</h3>
                 <ul>
                   <li v-for="(feature, x) in project.features" :key="x">
                     {{ feature }}
                   </li>
                 </ul>
-                <h2 class="goldman">Tech Stack</h2>
+                <h3 class="goldman">Tech Stack</h3>
                 <ul>
                   <li v-for="(tech, y) in project.techStack" :key="y">
                     {{ tech }}
@@ -62,22 +56,22 @@
                   <v-btn
                     class="px-4 mt-4 mr-2"
                     dark
-                    :small="$vuetify.breakpoint.smAndDown"
+                    small
                     :href="project.link"
                     target="_blank"
                     v-if="project.link"
                   >
-                    <v-icon left>mdi-arrow-top-right</v-icon>
+                    <i class="bx bxs-right-top-arrow-circle mr-2"></i>
                     Direct link
                   </v-btn>
                   <v-btn
                     class="px-4 mt-4"
                     dark
-                    :small="$vuetify.breakpoint.smAndDown"
+                    small
                     :href="project.github"
                     target="_blank"
                   >
-                    <v-icon left>mdi-github</v-icon>
+                    <i class="bx bxl-github mr-2"></i>
                     Github
                   </v-btn>
                 </p>
@@ -88,8 +82,6 @@
       </v-row>
     </v-card>
   </v-container>
-
-  <!-- yzEOTtukOtY3mdYe -->
 </template>
 
 <script>
@@ -100,7 +92,11 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'This are some of my projects'
+      }
     ]
   },
   data() {

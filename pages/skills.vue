@@ -63,7 +63,7 @@ export default {
           name: 'Vue',
           icon: 'bx bxl-vuejs',
           desp:
-            'Get better a vue.js every single day, Have a in-depth knowlegde of vue framework as I have done few interesting projects using the same. I am quite familier with Vuex, Vue Router & also Nuxt.js.'
+            'Getting better a vue.js every single day, Have a in-depth knowlegde of vue framework as I have done few interesting projects using the same. I am quite familier with Vuex, Vue Router & also Nuxt.js.'
         },
         {
           name: 'Firebase',

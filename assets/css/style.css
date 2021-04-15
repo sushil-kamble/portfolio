@@ -11,6 +11,10 @@
   font-family: 'Work Sans', sans-serif;
 }
 
+.icon-font {
+  font-size: 28px;
+}
+
 .page-enter-active {
   animation: bounce-in 0.5s;
 }
@@ -50,7 +54,7 @@
 }
 
 @media only screen and (min-width: 960px) {
-  /* SM and UP */
+  /* SM and UP (PC)*/
   .sm-up-px4 {
     padding: 0 16px 0 16px;
   }
@@ -87,7 +91,7 @@
     height: 500px;
   }
   .sm-heading-font {
-    font-size: 20px;
+    font-size: 24px;
   }
   .sm-col-rev {
     display: flex;

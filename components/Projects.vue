@@ -19,7 +19,7 @@
           v-model="model"
           :class="$vuetify.breakpoint.smAndUp && 'pa-3'"
           center-active
-          :active-class="$vuetify.theme.dark ? 'accent' : 'primary accent-3'"
+          active-class="primary"
           :show-arrows="$vuetify.breakpoint.mdAndUp"
         >
           <v-slide-item
@@ -62,7 +62,7 @@
             height="200"
             elevation="2"
             max-width="600"
-            class="mx-auto"
+            class="mx-auto transparent"
           >
             <div class="fill-height text-center work-font mobile-font pa-5">
               <h2 class="goldman">
@@ -79,22 +79,22 @@
                 <v-btn
                   class="px-3 mr-2"
                   color="secondary"
-                  :small="$vuetify.breakpoint.smAndDown"
+                  small
                   :href="projects[model].link"
                   target="_blank"
                   v-if="projects[model].link"
                 >
-                  <v-icon left>mdi-arrow-top-right</v-icon>
+                  <i class="bx bxs-right-top-arrow-circle mr-2"></i>
                   Direct link
                 </v-btn>
                 <v-btn
                   class="px-3"
                   color="secondary"
-                  :small="$vuetify.breakpoint.smAndDown"
+                  small
                   :href="projects[model].github"
                   target="_blank"
                 >
-                  <v-icon left>mdi-github</v-icon>
+                  <i class="bx bxl-github mr-2"></i>
                   Github
                 </v-btn>
               </p>

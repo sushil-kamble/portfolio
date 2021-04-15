@@ -1,5 +1,5 @@
 <template>
-  <section :class="`${$vuetify.breakpoint.smAndUp && 'px-4'}`">
+  <section class="sm-up-px4">
     <h1
       class="goldman primary--text my-head-font my-text-center"
       data-aos="fade-right"
@@ -13,19 +13,13 @@
       data-aos-duration="1000"
     ></v-divider>
     <v-card
-      :class="`mt-6 my-margin-bottom-large ${
-        $vuetify.breakpoint.smAndUp && 'px-4'
-      }`"
+      class="mt-6 my-margin-bottom-large sm-up-px4"
       flat
       color="transparent"
     >
       <v-row>
         <v-col md="4" cols="12" data-aos="zoom-out-left">
-          <v-card
-            flat
-            color="transparent"
-            :class="`${$vuetify.breakpoint.smAndDown && 'text-center'}`"
-          >
+          <v-card flat color="transparent" class="my-text-center">
             <v-img
               src="img/hero.jpg"
               lazy-src="img/hero_com.jpg"

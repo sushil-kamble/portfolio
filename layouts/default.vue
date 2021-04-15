@@ -1,5 +1,8 @@
 <template>
-  <v-app id="main--app">
+  <v-app
+    id="main--app"
+    :style="{ background: $vuetify.theme.themes[theme].background }"
+  >
     <!-- Change everything at 960 -->
     <Navbar />
     <v-divider></v-divider>
@@ -17,9 +20,7 @@
         color="transparent"
         @click="toTop"
       >
-        <v-icon :class="`${!$vuetify.theme.dark && 'black--text'}`">
-          mdi-arrow-up
-        </v-icon>
+        <i class="bx bx-up-arrow-alt icon-font"></i>
       </v-btn>
     </v-main>
     <Footer />
@@ -31,7 +32,11 @@ export default {
   data: () => ({
     fab: false
   }),
-
+  computed: {
+    theme() {
+      return this.$vuetify.theme.dark ? 'dark' : 'light'
+    }
+  },
   methods: {
     onScroll(e) {
       if (typeof window === 'undefined') return

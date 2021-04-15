@@ -19,7 +19,7 @@
           v-model="model"
           :class="$vuetify.breakpoint.smAndUp && 'pa-3'"
           center-active
-          :active-class="$vuetify.theme.dark ? 'accent' : 'primary accent-3'"
+          active-class="primary"
           :show-arrows="$vuetify.breakpoint.mdAndUp"
         >
           <v-slide-item

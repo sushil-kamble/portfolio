@@ -1,72 +1,34 @@
 <template>
   <span>
-    <a
-      href="https://github.com/sushil-kamble"
-      class="text-decoration-none"
-      target="_blank"
-    >
-      <v-icon
-        large
-        :left="$vuetify.breakpoint.smAndUp"
-        @mouseover="isHovering1 = true"
-        @mouseout="isHovering1 = false"
-        :color="isHovering1 ? 'info' : ''"
-        >mdi-github
-      </v-icon>
-    </a>
-    <a
+    <v-btn href="https://github.com/sushil-kamble" target="_blank" fab small>
+      <i class="bx bxl-github icon-font"></i>
+    </v-btn>
+    <v-btn
       href="https://www.linkedin.com/in/sushil-kamble-51b9181a7/"
-      class="text-decoration-none"
+      class="ml-2"
       target="_blank"
+      fab
+      small
     >
-      <v-icon
-        large
-        :left="$vuetify.breakpoint.smAndUp"
-        @mouseover="isHovering2 = true"
-        @mouseout="isHovering2 = false"
-        :color="isHovering2 ? 'info' : ''"
-        >mdi-linkedin
-      </v-icon>
-    </a>
-    <a
+      <i class="bx bxl-linkedin icon-font"></i>
+    </v-btn>
+    <v-btn
       href="https://www.instagram.com/always_sushil/"
-      class="text-decoration-none"
+      class="ml-2"
       target="_blank"
+      fab
+      small
     >
-      <v-icon
-        large
-        :left="$vuetify.breakpoint.smAndUp"
-        @mouseover="isHovering3 = true"
-        @mouseout="isHovering3 = false"
-        :color="isHovering3 ? 'info' : ''"
-        >mdi-instagram
-      </v-icon>
-    </a>
-    <a
+      <i class="bx bxl-instagram icon-font"></i>
+    </v-btn>
+    <v-btn
       href="https://twitter.com/SushilK28005811"
-      class="text-decoration-none"
+      class="ml-2"
+      fab
+      small
       target="_blank"
     >
-      <v-icon
-        large
-        :left="$vuetify.breakpoint.smAndUp"
-        @mouseover="isHovering4 = true"
-        @mouseout="isHovering4 = false"
-        :color="isHovering4 ? 'info' : ''"
-        >mdi-twitter
-      </v-icon>
-    </a>
+      <i class="bx bxl-twitter icon-font"></i>
+    </v-btn>
   </span>
 </template>
-<script>
-export default {
-  data() {
-    return {
-      isHovering1: false,
-      isHovering2: false,
-      isHovering3: false,
-      isHovering4: false
-    }
-  }
-}
-</script>

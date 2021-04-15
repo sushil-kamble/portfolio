@@ -1,5 +1,5 @@
 <template>
-  <v-card max-width="600" class="mt-2 pa-4 mx-auto">
+  <v-card max-width="600" class="mt-2 pa-4 mx-auto transparent">
     <v-form autocomplete="off" name="google-sheet" data-aos="zoom-in">
       <h2 class="goldman mb-4">Contact</h2>
       <v-text-field
@@ -39,7 +39,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'Contact Me' }
     ]
   },
   data() {

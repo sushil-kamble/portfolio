@@ -11,7 +11,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'I am a computer engineer, who is filled with enthusiasm about web development, building projects & learning new technologies. I love developing ideas that come to my mind. Learning new technologies is my hobby along with playing games and watching movies. I keep myself up-to-date with the new trends going around the world. Passionate about project planning and development. I have plesant knowledge about frontend and backend technologies as I have developed few interesting projects using them.'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -60,24 +65,22 @@ export default {
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
+    defaultAssets: false,
     theme: {
       themes: {
         light: {
           primary: colors.blue.accent3,
           secondary: colors.blueGrey.darken4,
           accent: colors.grey.lighten5,
-          info: colors.grey,
-          error: colors.red.accent3
+          info: colors.blue.accent3,
+          background: colors.grey.lighten5
         },
         dark: {
           primary: colors.blueGrey.lighten3,
           secondary: colors.blueGrey.lighten1,
-          accent: colors.grey.darken4,
-          info: colors.grey,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
+          accent: colors.grey.darken3,
+          info: colors.grey.darken4,
+          background: colors.grey.darken3
         }
       }
     }
