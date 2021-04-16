@@ -52,6 +52,12 @@
 .sm-hero-height {
   height: 650px;
 }
+.hide-pc {
+  display: none !important;
+}
+.hide-mobile {
+  display: block !important;
+}
 
 @media only screen and (min-width: 960px) {
   /* SM and UP (PC)*/
@@ -81,9 +87,8 @@
   }
 }
 
-/*  */
 @media only screen and (max-width: 960px) {
-  /* SM and DOWN */
+  /* SM and DOWN (MOBILE) */
   .my-text-center {
     text-align: center;
   }
@@ -96,5 +101,11 @@
   .sm-col-rev {
     display: flex;
     flex-direction: column-reverse;
+  }
+  .hide-pc {
+    display: block !important;
+  }
+  .hide-mobile {
+    display: none !important;
   }
 }

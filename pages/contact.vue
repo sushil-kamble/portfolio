@@ -1,5 +1,5 @@
 <template>
-  <v-card max-width="600" class="mt-2 pa-4 mx-auto transparent">
+  <v-card max-width="600" class="mt-2 pa-4 mx-auto transparen work-font">
     <v-form autocomplete="off" name="google-sheet" data-aos="zoom-in">
       <h2 class="goldman mb-4">Contact</h2>
       <v-text-field
@@ -17,7 +17,7 @@
       <input type="hidden" :value="Date().toLocaleString()" name="timestamp" />
       <v-textarea label="Message" v-model="message" name="message"></v-textarea>
       <v-btn
-        color="primary"
+        class="primary goldman"
         type="submit"
         @click.prevent="submitForm()"
         :loading="loading"
@@ -25,9 +25,12 @@
         Submit
       </v-btn>
     </v-form>
-    <v-alert outlined text type="success" v-if="feedback" class="mt-4">
-      {{ feedback }}
-    </v-alert>
+    <p
+      :class="`mt-4 pa-3 white--text ${feedback[1]}`"
+      v-if="feedback.length > 1"
+    >
+      {{ feedback[0] }}
+    </p>
   </v-card>
 </template>
 
@@ -47,25 +50,30 @@ export default {
       name: '',
       gmail: '',
       message: '',
-      feedback: '',
+      feedback: [],
       loading: false
     }
   },
   methods: {
     submitForm() {
       this.loading = true
-      const form = document.forms['google-sheet']
-      const script =
-        'https://script.google.com/macros/s/AKfycbwhkNgMbHRL3z0vD9jxmifXZRmiiHKu8DiuESq-z0dwjNgOdIIs53flVi3zda2iPkdE/exec'
-      fetch(script, { method: 'POST', body: new FormData(form) })
-        .then((response) => {
-          this.feedback = 'Thanks for submitting the form'
-          this.name = ''
-          this.gmail = ''
-          this.message = ''
-          this.loading = false
-        })
-        .catch((error) => console.error('Error!', error.message))
+      if (this.name && this.gmail && this.message) {
+        const form = document.forms['google-sheet']
+        const script =
+          'https://script.google.com/macros/s/AKfycbwhkNgMbHRL3z0vD9jxmifXZRmiiHKu8DiuESq-z0dwjNgOdIIs53flVi3zda2iPkdE/exec'
+        fetch(script, { method: 'POST', body: new FormData(form) })
+          .then((response) => {
+            this.feedback = ['Thanks for submitting the form', 'success']
+            this.name = ''
+            this.gmail = ''
+            this.message = ''
+            this.loading = false
+          })
+          .catch((error) => console.error('Error!', error.message))
+      } else {
+        this.feedback = ['Please fill all the inputs', 'error']
+        this.loading = false
+      }
     }
   }
 }

@@ -3,8 +3,8 @@
     <v-app-bar
       app
       class="container background"
-      elevate-on-scroll
       height="70"
+      max-width="1181"
       tag="header"
       flat
     >
@@ -12,13 +12,11 @@
 
       <v-spacer></v-spacer>
 
-      <v-app-bar-nav-icon
-        v-if="$vuetify.breakpoint.smAndDown && reveal"
-        @click.stop="drawer = !drawer"
+      <v-app-bar-nav-icon class="hide-pc" @click.stop="drawer = !drawer"
         ><i class="bx bxs-category icon-font"></i>
       </v-app-bar-nav-icon>
 
-      <div v-else-if="$vuetify.breakpoint.smAndUp && reveal" class="goldman">
+      <div class="goldman hide-mobile">
         <v-btn text to="/" nuxt>
           <span>Home </span>
         </v-btn>

@@ -31,11 +31,7 @@
       </v-card>
     </v-col>
 
-    <v-col
-      md="6"
-      class="hero-two d-flex justify-end hide-intro-img"
-      v-if="$vuetify.breakpoint.mdAndUp"
-    >
+    <v-col md="6" class="hero-two hide-mobile">
       <v-img src="img/hero2.svg" height="380" contain />
     </v-col>
   </v-row>

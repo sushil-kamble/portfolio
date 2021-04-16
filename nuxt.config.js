@@ -73,7 +73,7 @@ export default {
           secondary: colors.blueGrey.darken4,
           accent: colors.grey.lighten5,
           info: colors.blue.accent3,
-          background: colors.grey.lighten5
+          background: colors.shades.white
         },
         dark: {
           primary: colors.blueGrey.lighten3,
