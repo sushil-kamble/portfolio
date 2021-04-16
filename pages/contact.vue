@@ -1,5 +1,5 @@
 <template>
-  <v-card max-width="600" class="mt-2 pa-4 mx-auto transparen work-font">
+  <v-card max-width="600" class="pa-6 mx-auto my-8 transparent work-font">
     <v-form autocomplete="off" name="google-sheet" data-aos="zoom-in">
       <h2 class="goldman mb-4">Contact</h2>
       <v-text-field
@@ -62,7 +62,7 @@ export default {
         const script =
           'https://script.google.com/macros/s/AKfycbwhkNgMbHRL3z0vD9jxmifXZRmiiHKu8DiuESq-z0dwjNgOdIIs53flVi3zda2iPkdE/exec'
         fetch(script, { method: 'POST', body: new FormData(form) })
-          .then((response) => {
+          .then(() => {
             this.feedback = ['Thanks for submitting the form', 'success']
             this.name = ''
             this.gmail = ''

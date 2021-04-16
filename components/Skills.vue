@@ -19,7 +19,7 @@
     >
       <v-row class="sm-col-rev">
         <v-col md="6" class="hero-two" cols="12" data-aos="zoom-out-left">
-          <h4 class="mb-4 work-font my-text-center text-justify">
+          <h4 class="mb-4 work-font my-text-center text-justify mobile-font">
             Expertise in Core Python and Javascript, along with their famous
             framework like django and vue.js respectively. Desent knowlegde
             about Google's Cloud Platform & Firebase. git, github, react.js,

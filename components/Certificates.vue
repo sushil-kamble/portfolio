@@ -1,12 +1,11 @@
 <template>
-  <section class="sm-up-px4">
-    <h1
-      class="goldman primary--text my-head-font my-text-center"
-      data-aos="fade-right"
-      data-aos-duration="1000"
-    >
-      Certificates
-    </h1>
+  <div class="sm-up-px4">
+    <div data-aos="fade-right" data-aos-duration="1000">
+      <h1 class="goldman primary--text my-head-font my-text-center">
+        Certificates
+      </h1>
+    </div>
+
     <v-divider
       class="primary mb-4"
       data-aos="zoom-in"
@@ -17,41 +16,33 @@
       <v-sheet class="sm-up-ma-4" color="transparent">
         <v-slide-group
           v-model="model"
-          :class="$vuetify.breakpoint.smAndUp && 'pa-3'"
+          class="sm-up-pa-3"
           center-active
           active-class="primary"
-          :show-arrows="$vuetify.breakpoint.mdAndUp"
         >
+          <template v-slot:prev="{}">
+            <v-btn fab small icon>
+              <i class="bx bx-left-arrow-alt icon-font"></i>
+            </v-btn>
+          </template>
+          <template v-slot:next="{}">
+            <v-btn fab small icon>
+              <i class="bx bx-right-arrow-alt icon-font"></i>
+            </v-btn>
+          </template>
           <v-slide-item
-            v-for="n in certificates.length"
+            v-for="(certificate, n) in certificates"
             :key="n"
-            v-slot="{ active, toggle }"
+            v-slot="{ toggle }"
           >
-            <v-card
-              class="ma-3 grow"
-              :width="$vuetify.breakpoint.smAndUp ? 300 : 180"
-              @click="toggle"
-            >
+            <v-card class="ma-3 grow width-card" @click="toggle">
               <v-img
-                :src="`img/certificates/${certificates[n - 1].img}`"
-                :height="$vuetify.breakpoint.smAndDown ? 150 : 180"
-                contain
+                :src="`${certificate.img}`"
+                class="height-img"
+                position="center"
               ></v-img>
-              <h2
-                :class="`text-center goldman mobile-font px-1 ${
-                  active && 'black--text'
-                } `"
-                v-if="$vuetify.theme.dark"
-              >
-                {{ certificates[n - 1].name }}
-              </h2>
-              <h2
-                :class="`text-center goldman mobile-font px-1 ${
-                  active && 'white--text'
-                }`"
-                v-else
-              >
-                {{ certificates[n - 1].name }}
+              <h2 class="text-center goldman mobile-font px-1">
+                {{ certificate.name }}
               </h2>
             </v-card>
           </v-slide-item>
@@ -72,7 +63,7 @@
         </v-btn>
       </v-sheet>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -82,23 +73,23 @@ export default {
     certificates: [
       {
         name: 'Applied Data Science with Python',
-        img: 'applied_data_science.jpg'
+        img: 'img/certificates/applied_data_science.jpg'
       },
       {
         name: 'Introduction to Data Science',
-        img: 'intro_to_data_science.jpg'
+        img: 'img/certificates/intro_to_data_science.jpg'
       },
       {
         name: 'Neural Network and Deep Learning',
-        img: 'deep_learning.jpg'
+        img: 'img/certificates/deep_learning.jpg'
       },
       {
         name: 'Using Python to Access Web Data',
-        img: 'using_python_access_web_data.jpg'
+        img: 'img/certificates/using_python_access_web_data.jpg'
       },
       {
         name: 'Applied Machine Learning in Python',
-        img: 'applied_machine_learning_in_python.jpg'
+        img: 'img/certificates/applied_machine_learning_in_python.jpg'
       }
     ]
   })

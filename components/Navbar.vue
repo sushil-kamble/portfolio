@@ -1,5 +1,5 @@
 <template>
-  <v-responsive>
+  <div>
     <v-app-bar
       app
       class="container background"
@@ -12,9 +12,9 @@
 
       <v-spacer></v-spacer>
 
-      <v-app-bar-nav-icon class="hide-pc" @click.stop="drawer = !drawer"
-        ><i class="bx bxs-category icon-font"></i>
-      </v-app-bar-nav-icon>
+      <v-btn class="ml-6 hide-pc" fab icon @click.stop="drawer = !drawer">
+        <i class="bx bxs-category icon-font"> </i>
+      </v-btn>
 
       <div class="goldman hide-mobile">
         <v-btn text to="/" nuxt>
@@ -76,42 +76,20 @@
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
-  </v-responsive>
+  </div>
 </template>
 
 <script>
 export default {
   data: () => ({
     drawer: false,
-    group: null,
-    reveal: false,
-    scrollPosition: null
+    group: null
   }),
 
   watch: {
     group() {
       this.drawer = false
     }
-  },
-  mounted() {
-    window.addEventListener('scroll', this.updateScroll)
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start()
-      setTimeout(() => this.loadingFinish())
-    })
-  },
-
-  methods: {
-    loadingFinish() {
-      this.$nuxt.$loading.finish()
-      this.reveal = true
-    },
-    updateScroll() {
-      this.scrollPosition = window.scrollY
-    }
-  },
-  destroyed() {
-    window.removeEventListener('scroll')
   }
 }
 </script>

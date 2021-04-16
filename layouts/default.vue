@@ -3,13 +3,10 @@
     id="main--app"
     :style="{ background: $vuetify.theme.themes[theme].background }"
   >
-    <!-- Change everything at 960 -->
     <Navbar />
     <v-divider></v-divider>
     <v-main>
-      <v-container fluid>
-        <nuxt />
-      </v-container>
+      <Nuxt keep-alive />
       <v-btn
         v-scroll="onScroll"
         v-show="fab"

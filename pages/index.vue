@@ -8,16 +8,6 @@
       <Projects />
       <Certificates />
     </div>
-    <!-- <div v-else>
-      <v-card height="650" flat class="d-flex justify-center align-center">
-        <v-progress-circular
-          class="primary--text"
-          indeterminate
-          size="64"
-          width="5"
-        ></v-progress-circular>
-      </v-card>
-    </div> -->
   </v-container>
 </template>
 

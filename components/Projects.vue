@@ -1,12 +1,10 @@
 <template>
-  <section class="my-margin-bottom-large sm-up-px4">
-    <h1
-      class="goldman primary--text my-head-font my-text-center"
-      data-aos="fade-right"
-      data-aos-duration="1000"
-    >
-      Projects
-    </h1>
+  <div class="my-margin-bottom-large sm-up-px4">
+    <div data-aos="fade-right" data-aos-duration="1000">
+      <h1 class="goldman primary--text my-head-font my-text-center">
+        Projects
+      </h1>
+    </div>
     <v-divider
       class="primary mb-4"
       data-aos="zoom-in"
@@ -17,45 +15,41 @@
       <v-sheet class="sm-up-ma-4" color="transparent">
         <v-slide-group
           v-model="model"
-          :class="$vuetify.breakpoint.smAndUp && 'pa-3'"
+          class="sm-up-pa-3"
           center-active
           active-class="primary"
-          :show-arrows="$vuetify.breakpoint.mdAndUp"
+          mobile-breakpoint="960"
         >
+          <template v-slot:prev="{}">
+            <v-btn fab small icon>
+              <i class="bx bx-left-arrow-alt icon-font"></i>
+            </v-btn>
+          </template>
+          <template v-slot:next="{}">
+            <v-btn fab small icon>
+              <i class="bx bx-right-arrow-alt icon-font"></i>
+            </v-btn>
+          </template>
           <v-slide-item
-            v-for="n in projects.length"
+            v-for="(project, n) in projects"
             :key="n"
-            v-slot="{ active, toggle }"
+            v-slot="{ toggle }"
           >
-            <v-card
-              class="ma-3 grow"
-              :width="$vuetify.breakpoint.smAndUp ? 300 : 180"
-              @click="toggle"
-            >
+            <v-card class="ma-3 grow width-card" @click="toggle">
               <v-img
-                :src="`img/projects/${projects[n - 1].img}`"
-                :height="$vuetify.breakpoint.smAndDown ? 200 : 230"
-                :aspect-ratio="1 / 1"
+                :src="`${project.img}`"
+                class="height-img"
+                position="center"
               ></v-img>
-              <h1
-                :class="`text-center goldman mobile-font ${
-                  active && 'black--text'
-                }`"
-                v-if="$vuetify.theme.dark"
-              >
-                {{ projects[n - 1].name }}
-              </h1>
-              <h1
-                :class="`text-center goldman mobile-font ${
-                  active && 'white--text'
-                }`"
-                v-else
-              >
-                {{ projects[n - 1].name }}
-              </h1>
+              <h2 class="text-center goldman mobile-font">
+                {{ project.name }}
+              </h2>
             </v-card>
           </v-slide-item>
         </v-slide-group>
+        <h6 class="grey--text work-font text-center">
+          To see more projects click on My Projects
+        </h6>
         <v-expand-transition>
           <v-sheet
             v-if="model != null"
@@ -113,7 +107,7 @@
         </v-btn>
       </v-sheet>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -125,7 +119,7 @@ export default {
         name: 'Advanced Todo',
         description:
           'My Todos is an advance Todo PWA with auth system, timed todo feature and many real-time functionalities.',
-        img: 'todo.png',
+        img: 'img/projects/todo.png',
         link: 'https://allofmytodo.web.app/',
         github: 'https://github.com/sushil-kamble/advanced-todo'
       },
@@ -133,7 +127,7 @@ export default {
         name: 'Chat Hub',
         description:
           'ChatHub is a group chat Progressive Web App(PWA) which involving authentication and real-time presence system.',
-        img: 'chathub.png',
+        img: 'img/projects/chathub.png',
         link: 'https://chatonweb-chathub.web.app/',
         github: 'https://github.com/sushil-kamble/chat-hub'
       },
@@ -141,7 +135,7 @@ export default {
         name: 'Transaction Dairy',
         description:
           'Transaction Diary is a PWA where you can make a note of credit that your friend has borrowed from you.',
-        img: 'transfer.png',
+        img: 'img/projects/transfer.png',
         link: 'https://my-transfers.web.app/',
         github: 'https://github.com/sushil-kamble/transactions-diary'
       },
@@ -149,7 +143,7 @@ export default {
         name: 'Movie Hub',
         description:
           'Movie Hub is complete platform for movie lovers, with recommendation, chat, movie filtering system, watchlist and reviews.',
-        img: 'rec.jpg',
+        img: 'img/projects/rec.jpg',
         github: 'https://github.com/sushil-kamble/movie-recommender'
       }
     ]
