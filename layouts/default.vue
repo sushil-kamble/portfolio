@@ -4,7 +4,6 @@
     :style="{ background: $vuetify.theme.themes[theme].background }"
   >
     <Navbar />
-    <v-divider></v-divider>
     <v-main>
       <Nuxt keep-alive />
       <v-btn

@@ -1,13 +1,10 @@
 <template>
-  <!-- 1263 breakage -->
   <v-container>
-    <div>
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Certificates />
-    </div>
+    <Hero />
+    <About />
+    <Skills />
+    <Projects />
+    <Certificates />
   </v-container>
 </template>
 
@@ -26,23 +23,6 @@ export default {
           'I am a computer engineer, who is filled with enthusiasm about web development, building projects & learning new technologies. I love developing ideas that come to my mind. Learning new technologies is my hobby along with playing games and watching movies. I keep myself up-to-date with the new trends going around the world. Passionate about project planning and development. I have plesant knowledge about frontend and backend technologies as I have developed few interesting projects using them.'
       }
     ]
-  },
-  data() {
-    return {
-      reveal: false
-    }
-  },
-  mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start()
-      setTimeout(() => this.loadingFinish())
-    })
-  },
-  methods: {
-    loadingFinish() {
-      this.$nuxt.$loading.finish()
-      this.reveal = true
-    }
   }
 }
 </script>

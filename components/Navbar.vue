@@ -5,15 +5,14 @@
       class="container background"
       height="70"
       max-width="1181"
-      tag="header"
       flat
     >
       <v-toolbar-title class="goldman">Sushil</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
-      <v-btn class="ml-6 hide-pc" fab icon @click.stop="drawer = !drawer">
-        <i class="bx bxs-category icon-font"> </i>
+      <v-btn class="hide-pc" fab icon @click.stop="drawer = !drawer">
+        <i class="bx bxs-card icon-font"></i>
       </v-btn>
 
       <div class="goldman hide-mobile">
@@ -36,7 +35,10 @@
       <v-list nav>
         <v-list-item-group v-model="group">
           <v-list-item>
-            <v-img lazy-src="img/me_supermin.jpg" src="img/me_min.jpg"></v-img>
+            <v-img
+              lazy-src="/img/me_supermin.jpg"
+              src="/img/me_min.jpg"
+            ></v-img>
           </v-list-item>
 
           <v-list-item>

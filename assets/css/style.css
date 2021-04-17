@@ -15,7 +15,7 @@
   font-size: 28px;
 }
 
-.page-enter-active {
+/* .page-enter-active {
   animation: bounce-in 0.5s;
 }
 .page-leave-active {
@@ -31,9 +31,9 @@
   100% {
     transform: scale(1);
   }
-}
+} */
 
-/* .page-enter-active,
+.page-enter-active,
 .page-leave-active {
   transition: opacity 0.3s;
 }
@@ -41,7 +41,8 @@
 .page-enter,
 .page-leave-to {
   opacity: 0;
-} */
+}
+/* TRANSITION */
 
 .max-height-img {
   max-height: 250px;

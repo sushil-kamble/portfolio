@@ -29,9 +29,7 @@
           <v-img
             :src="`${project.img}`"
             :aspect-ratio="3 / 2"
-            :gradient="`76deg, ${hexToRgbA(
-              $vuetify.theme.themes.dark.accent
-            )} 38%, rgba(0,0,0,0.2) 100%`"
+            gradient="76deg, rgba(66, 66, 66, 0.9) 38%, rgba(0, 0, 0, 0.2) 100%"
             class="pa-4 white--text rounded-lg mobile-font elevation-10"
           >
             <h2 class="goldman">{{ project.name }}</h2>
@@ -40,21 +38,29 @@
               <p>
                 {{ project.description }}
               </p>
-              <h3 class="goldman">Features</h3>
-              <ul v-if="project.features">
-                <li
-                  v-for="(feature, x) in project.features.split('%')"
-                  :key="x"
-                >
-                  {{ feature }}
-                </li>
-              </ul>
-              <h3 class="goldman mt-2">Tech Stack</h3>
-              <ul v-if="project.techStack">
-                <li v-for="(tech, y) in project.techStack.split('%')" :key="y">
-                  {{ tech }}
-                </li>
-              </ul>
+              <div v-if="project.features">
+                <h3 class="goldman">Features</h3>
+                <ul>
+                  <li
+                    v-for="(feature, x) in project.features.split('%')"
+                    :key="x"
+                  >
+                    {{ feature }}
+                  </li>
+                </ul>
+              </div>
+              <div v-if="project.techStack">
+                <h3 class="goldman mt-2">Tech Stack</h3>
+                <ul>
+                  <li
+                    v-for="(tech, y) in project.techStack.split('%')"
+                    :key="y"
+                  >
+                    {{ tech }}
+                  </li>
+                </ul>
+              </div>
+
               <p class="goldman">
                 <v-btn
                   class="px-4 mt-4 mr-2"
@@ -112,24 +118,6 @@ export default {
     this.fetchProjects = await fetch(
       `https://sushil-kamble-default-rtdb.firebaseio.com/projects.json`
     ).then((res) => res.json())
-  },
-  methods: {
-    hexToRgbA(hex) {
-      var c
-      if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
-        c = hex.substring(1).split('')
-        if (c.length == 3) {
-          c = [c[0], c[0], c[1], c[1], c[2], c[2]]
-        }
-        c = '0x' + c.join('')
-        return (
-          'rgba(' +
-          [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') +
-          ',0.9)'
-        )
-      }
-      throw new Error('Bad Hex')
-    }
   }
 }
 </script>
