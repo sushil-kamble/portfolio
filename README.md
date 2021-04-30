@@ -48,7 +48,7 @@
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=sushil-kamble&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 
-> <sub><sup>_NOTE: Top languages does not indicate my skill level or something like that, it's a github metric._</sup></sub>
+> <sub>NOTE: Top languages does not indicate my skill level or something like that, it's a GitHub metric.</sub>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/dede5993-11b9-48d4-8284-04ed7e7b6f77/deploy-status)](https://www.sushilkamble.live/)
 

@@ -1,51 +1,77 @@
 <template>
-  <v-row class="px-4">
-    <v-col md="6">
-      <v-card color="transparent sm-hero-height" class="hero-one" flat>
-        <div class="my-text-center">
-          <h4 class="goldman text-uppercase text--secondary">hey there</h4>
-          <h1 class="goldman i-am-sushil">
-            I am <span class="primary--text">Sushil</span>
-          </h1>
+  <v-card color="transparent" class="hero-one sm-hero-height px-4" flat>
+    <div class="my-text-center goldman">
+      <h1 class="i-am-sushil">
+        <span class="d-block" style="font-size: 24px">Hi there,</span>
+        I'm
+        <span class="blue--text text--accent-3">Sushil Kamble</span>
+      </h1>
+      <h1>
+        <span class="display-block-sm mobile-font">I am</span>
+        <Typing />
+      </h1>
 
-          <h1 class="goldman">I am a Web Developer</h1>
-          <div class="mt-7 goldman">
-            <v-btn
-              color="info"
-              large
-              elevation="4"
-              href="https://drive.google.com/file/d/1y7k-psiq7QVYnCb_2LhF-gaRSyhD7lX1/view?usp=sharing"
-              target="_blank"
-            >
-              Resume
-            </v-btn>
-            <v-btn color="info" class="ml-2" large elevation="4" to="/contact">
-              Contact
-            </v-btn>
-          </div>
-
-          <div class="mt-8">
-            <Icons />
-          </div>
-        </div>
-      </v-card>
-    </v-col>
-
-    <v-col md="6" class="hero-two hide-mobile">
-      <v-img src="img/hero2.svg" height="380" contain />
-    </v-col>
-  </v-row>
+      <div class="my-6">
+        <v-btn
+          color="blue accent-3"
+          large
+          dark
+          elevation="4"
+          href="https://drive.google.com/file/d/1y7k-psiq7QVYnCb_2LhF-gaRSyhD7lX1/view?usp=sharing"
+          target="_blank"
+          rel="noopener"
+        >
+          Resume
+        </v-btn>
+        <v-btn
+          color="blue-grey darken-3"
+          class="ml-2"
+          large
+          nuxt
+          elevation="4"
+          to="/contact"
+          dark
+        >
+          Contact
+        </v-btn>
+        <v-btn
+          class="ml-4"
+          fab
+          icon
+          small
+          v-if="$vuetify.breakpoint.mdAndUp"
+          @click="changeTheme"
+        >
+          <i
+            :class="`icon-font ${
+              !$vuetify.theme.dark ? 'bx bxs-moon' : 'bx bxs-sun'
+            }`"
+          ></i>
+        </v-btn>
+      </div>
+      <div class="mt-8">
+        <Icons />
+      </div>
+    </div>
+  </v-card>
 </template>
+
+<script>
+export default {
+  name: 'Hero',
+  methods: {
+    changeTheme() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+      const theme = this.$vuetify.theme.dark ? 'dark' : 'light'
+      localStorage.setItem('getTheme', theme)
+    }
+  }
+}
+</script>
 
 
 <style scoped>
-.cos-name {
-  font-size: 55px;
-}
 .hero-one {
   padding-top: 8vw;
-}
-.hero-two {
-  padding-top: 7vw;
 }
 </style>

@@ -7,7 +7,10 @@ export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     titleTemplate: 'Sushil - %s',
-    title: 'Sushil',
+    title: '',
+    htmlAttrs: {
+      lang: 'en'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -44,12 +47,7 @@ export default {
   css: ['~/assets/css/style.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [
-    {
-      src: '~/plugins/aos.js',
-      mode: 'client'
-    }
-  ],
+  plugins: [{ src: '~/plugins/vueTyper.js', mode: 'client' }],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -65,29 +63,11 @@ export default {
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
-    defaultAssets: false,
-    theme: {
-      themes: {
-        light: {
-          primary: colors.blue.accent3,
-          secondary: colors.blueGrey.darken4,
-          accent: colors.grey.lighten5,
-          info: colors.blue.accent3,
-          background: colors.shades.white
-        },
-        dark: {
-          primary: colors.blueGrey.lighten3,
-          secondary: colors.blueGrey.lighten1,
-          accent: colors.grey.darken3,
-          info: colors.grey.darken4,
-          background: colors.grey.darken3
-        }
-      }
-    }
+    defaultAssets: false
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    transpile: ['aos']
+    transpile: []
   }
 }

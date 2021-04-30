@@ -1,12 +1,19 @@
 <template>
-  <span>
-    <v-btn href="https://github.com/sushil-kamble" target="_blank" fab small>
+  <div>
+    <v-btn
+      href="https://github.com/sushil-kamble"
+      target="_blank"
+      rel="noopener"
+      fab
+      small
+    >
       <i class="bx bxl-github icon-font"></i>
     </v-btn>
     <v-btn
       href="https://www.linkedin.com/in/sushil-kamble-51b9181a7/"
       class="ml-2"
       target="_blank"
+      rel="noopener"
       fab
       small
     >
@@ -16,6 +23,7 @@
       href="https://www.instagram.com/always_sushil/"
       class="ml-2"
       target="_blank"
+      rel="noopener"
       fab
       small
     >
@@ -27,8 +35,9 @@
       fab
       small
       target="_blank"
+      rel="noopener"
     >
       <i class="bx bxl-twitter icon-font"></i>
     </v-btn>
-  </span>
+  </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <v-app
     id="main--app"
-    :style="{ background: $vuetify.theme.themes[theme].background }"
+    :style="{ background: $vuetify.theme.dark ? '#22272E' : '#FFFFFF' }"
   >
     <Navbar />
     <v-main>
@@ -28,9 +28,27 @@ export default {
   data: () => ({
     fab: false
   }),
-  computed: {
-    theme() {
-      return this.$vuetify.theme.dark ? 'dark' : 'light'
+  mounted() {
+    if (typeof window !== 'undefined') {
+      const theme = window.localStorage.getItem('getTheme')
+      if (theme === null) {
+        // Detects your browser theme
+        if (
+          window.matchMedia &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches
+        ) {
+          this.$vuetify.theme.dark = true
+        } else {
+          this.$vuetify.theme.dark = false
+        }
+      } else {
+        // get from localStorage
+        if (theme === 'dark') {
+          this.$vuetify.theme.dark = true
+        } else {
+          this.$vuetify.theme.dark = false
+        }
+      }
     }
   },
   methods: {

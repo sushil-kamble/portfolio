@@ -1,31 +1,22 @@
 <template>
-  <section class="sm-up-px4">
+  <section class="sm-up-px4 my-margin-bottom-large">
     <h1
-      class="goldman primary--text my-head-font my-text-center"
-      data-aos="fade-right"
+      class="goldman blue--text text--accent-3 my-text-center"
+      style="font-size: 35px"
     >
       Skills
     </h1>
-    <v-divider
-      class="primary"
-      data-aos="zoom-in"
-      data-aos-delay="100"
-      data-aos-duration="1000"
-    ></v-divider>
-    <v-card
-      class="my-margin-bottom-large mt-6 sm-up-px4"
-      flat
-      color="transparent"
-    >
+    <v-divider class="blue accent-3"></v-divider>
+    <v-card class="mt-6" flat color="transparent">
       <v-row class="sm-col-rev">
-        <v-col md="6" class="hero-two" cols="12" data-aos="zoom-out-left">
-          <h4 class="mb-4 work-font my-text-center text-justify mobile-font">
+        <v-col md="6" cols="12">
+          <h3 class="mb-4 work-font text-justify mobile-font">
             Expertise in Core Python and Javascript, along with their famous
-            framework like django and vue.js respectively. Desent knowlegde
+            framework like django and vue.js respectively. Decent knowledge
             about Google's Cloud Platform & Firebase. git, github, react.js,
             nuxt.js, next.js, gatsby, flask, MySQL, vscode, webstorm,
             numpy/pandas are some of the libraries/technologies I have used.
-          </h4>
+          </h3>
           <v-card
             class="mb-2 transparent"
             elevation="6"
@@ -33,21 +24,24 @@
             :key="skill.id"
           >
             <div class="d-flex justify-space-between px-3 align-center">
-              <i :class="`${skill.icon} primary--text my-skill-icon`"></i>
+              <i
+                :class="`${skill.icon} blue--text text--accent-3`"
+                style="font-size: 30px"
+              ></i>
               <h4 class="goldman pt-1">{{ skill.name }}</h4>
               <h4 class="goldman">{{ skill.per }}%</h4>
             </div>
 
             <v-progress-linear
-              color="primary"
+              color="blue accent-3"
               :value="skill.per"
             ></v-progress-linear>
           </v-card>
           <h6 class="grey--text work-font mt-4">
-            Click on MY SKILLS to get more info.
+            Click on MY SKILLS button to get more info.
           </h6>
         </v-col>
-        <v-col md="6" cols="12" data-aos="zoom-in-right">
+        <v-col md="6" cols="12">
           <v-card flat class="d-flex justify-end align-center">
             <v-img
               :aspect-ratio="8 / 7"
@@ -61,7 +55,7 @@
       <v-btn
         large
         block
-        color="primary"
+        color="blue accent-3"
         class="mt-3 goldman"
         outlined
         to="/skills"
@@ -74,6 +68,7 @@
 
 <script>
 export default {
+  name: 'Skills',
   data() {
     return {
       skills: [
@@ -99,7 +94,7 @@ export default {
           id: 4,
           name: 'React',
           icon: 'bx bxl-react',
-          per: 50
+          per: 60
         },
         {
           id: 5,
@@ -113,11 +108,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.my-head-font {
-  font-size: 35px;
-}
-.my-skill-icon {
-  font-size: 30px;
-}
-</style>
+

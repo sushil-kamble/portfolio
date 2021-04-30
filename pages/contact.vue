@@ -1,7 +1,7 @@
 <template>
   <v-card max-width="600" class="pa-6 mx-auto my-8 transparent work-font">
-    <v-form autocomplete="off" name="google-sheet" data-aos="zoom-in">
-      <h2 class="goldman mb-4">Contact</h2>
+    <v-form autocomplete="off" name="google-sheet">
+      <h2 class="goldman mb-4 blue--text text--accent-3">Contact</h2>
       <v-text-field
         label="Name"
         v-model="name"
@@ -17,8 +17,9 @@
       <input type="hidden" :value="Date().toLocaleString()" name="timestamp" />
       <v-textarea label="Message" v-model="message" name="message"></v-textarea>
       <v-btn
-        class="primary goldman"
+        class="blue accent-3 goldman"
         type="submit"
+        dark
         @click.prevent="submitForm()"
         :loading="loading"
       >
@@ -63,7 +64,7 @@ export default {
           'https://script.google.com/macros/s/AKfycbwhkNgMbHRL3z0vD9jxmifXZRmiiHKu8DiuESq-z0dwjNgOdIIs53flVi3zda2iPkdE/exec'
         fetch(script, { method: 'POST', body: new FormData(form) })
           .then(() => {
-            this.feedback = ['Thanks for submitting the form', 'success']
+            this.feedback = ['Thanks for submitting the form', 'blue accent-3']
             this.name = ''
             this.gmail = ''
             this.message = ''
@@ -71,7 +72,7 @@ export default {
           })
           .catch((error) => console.error('Error!', error.message))
       } else {
-        this.feedback = ['Please fill all the inputs', 'error']
+        this.feedback = ['Please fill all the inputs', 'blue-grey darken-3']
         this.loading = false
       }
     }

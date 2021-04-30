@@ -1,21 +1,12 @@
 <template>
   <v-container>
     <v-card flat class="sm-up-px4 pb-2 transparent">
-      <h1
-        class="goldman primary--text my-head-font my-text-center"
-        data-aos="zoom-out-left"
-        data-aos-duration="1000"
-      >
+      <h1 class="goldman blue--text text--accent-3 my-head-font my-text-center">
         MY SKILLS
       </h1>
-      <v-divider
-        class="primary mb-2"
-        data-aos="zoom-in"
-        data-aos-delay="100"
-        data-aos-duration="2000"
-      ></v-divider>
-      <h2 v-if="$fetchState.pending" class="work-font">Fetching Data...</h2>
-      <div v-else data-aos="zoom-out" data-aos-duration="1000">
+      <v-divider class="blue accent-3 mb-2"></v-divider>
+      <Loading :height="80" v-if="$fetchState.pending" />
+      <div v-else>
         <v-chip-group class="work-font" column>
           <v-chip
             v-for="(tag, i) in tags"
@@ -32,12 +23,7 @@
         </v-chip-group>
       </div>
 
-      <v-divider
-        class="primary my-2"
-        data-aos="zoom-in"
-        data-aos-delay="100"
-        data-aos-duration="2000"
-      ></v-divider>
+      <v-divider class="blue accent-3 my-2"></v-divider>
       <SkillsRow name="Favourites" :iter="favTech" />
       <SkillsRow name="Working On" :iter="workOn" />
     </v-card>
@@ -63,13 +49,13 @@ export default {
           name: 'Vue',
           icon: 'bx bxl-vuejs',
           desp:
-            'Getting better a vue.js every single day, Have a in-depth knowlegde of vue framework as I have done few interesting projects using the same. I am quite familier with Vuex, Vue Router & also Nuxt.js.'
+            'Getting better a vue.js every single day, Have a in-depth knowledge of vue framework as I have done few interesting projects using the same. I am quite familiar with Vuex, Vue Router & also Nuxt.js.'
         },
         {
           name: 'Firebase',
           icon: 'bx bxl-firebase',
           desp:
-            'Done many projects using Firbase Authetication Service, Realtime DB, Cloud Firestore. Have a good knowledge about the query structure of Firestore.'
+            'Done many projects using Firebase Authentication Service, Realtime DB, Cloud Firestore. Have a good knowledge about the query structure of Firestore.'
         },
         {
           name: 'Django',

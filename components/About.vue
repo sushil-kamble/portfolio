@@ -1,41 +1,22 @@
 <template>
-  <section class="sm-up-px4">
+  <section class="sm-up-px4 my-margin-bottom-large">
     <h1
-      class="goldman primary--text my-head-font my-text-center"
-      data-aos="fade-right"
+      class="goldman blue--text text--accent-3 my-text-center"
+      style="font-size: 35px"
     >
       About Me
     </h1>
-    <v-divider
-      class="primary"
-      data-aos="zoom-in"
-      data-aos-delay="100"
-      data-aos-duration="1000"
-    ></v-divider>
-    <v-card
-      class="mt-6 my-margin-bottom-large sm-up-px4"
-      flat
-      color="transparent"
-    >
-      <v-row>
-        <v-col md="4" cols="12" data-aos="zoom-out-left">
-          <v-card flat color="transparent" class="my-text-center">
-            <v-img
-              src="img/hero.jpg"
-              lazy-src="img/hero_com.jpg"
-              class="max-height-img"
-              :contain="$vuetify.breakpoint.smAndUp"
-            ></v-img>
-          </v-card>
-        </v-col>
-        <v-col md="8" cols="12" data-aos="zoom-in-right">
-          <h3 class="work-font text-justify mobile-font">
+    <v-divider class="blue accent-3"></v-divider>
+    <v-card class="mt-6" flat color="transparent">
+      <v-row class="sm-col-rev">
+        <v-col md="8" cols="12">
+          <h3 class="mb-2 work-font text-justify mobile-font">
             I am a computer engineer, who is filled with enthusiasm about web
             development, building projects & learning new technologies. I love
             developing ideas that come to my mind. Learning new technologies is
             my hobby along with playing games and watching movies. I keep myself
             up-to-date with the new trends going around the world. Passionate
-            about project planning and development. I have plesant knowledge
+            about project planning and development. I have pleasant knowledge
             about frontend and backend technologies as I have developed few
             interesting projects using them.
           </h3>
@@ -45,9 +26,24 @@
             v-for="(item, id) in items"
             :key="id"
           >
-            <i :class="`${item.icon} my-skill-icon mr-4`"></i>
-            <h3 class="mobile-font">{{ item.title }}</h3>
+            <i
+              :class="`${item.icon} mr-4 blue--text text--accent-2`"
+              style="font-size: 30px"
+            ></i>
+            <h3 class="mobile-font">
+              {{ item.title }}
+            </h3>
           </div>
+        </v-col>
+        <v-col md="4" cols="12">
+          <v-card flat class="d-flex justify-end align-center">
+            <v-img
+              :aspect-ratio="8 / 7"
+              max-height="360"
+              src="img/hero.jpg"
+              lazy-src="img/hero_com.jpg"
+            ></v-img>
+          </v-card>
         </v-col>
       </v-row>
     </v-card>
@@ -60,7 +56,7 @@ export default {
     return {
       items: [
         {
-          title: 'Pimpri Chichwad College of Engineering, Pune',
+          title: 'Pimpri Chinchwad College of Engineering, Pune',
           icon: 'bx bxs-school'
         },
         {
@@ -76,12 +72,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.my-head-font {
-  font-size: 35px;
-}
-.my-skill-icon {
-  font-size: 30px;
-}
-</style>

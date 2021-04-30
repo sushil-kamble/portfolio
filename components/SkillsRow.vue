@@ -6,11 +6,11 @@
     <v-sheet v-for="(val, i) in iter" :key="i" color="transparent">
       <v-row no-gutters class="d-flex align-center">
         <v-col sm="2" cols="12" class="text-center">
-          <i :class="`${val.icon} primary--text my-skill-icon`"></i>
+          <i :class="`${val.icon} blue--text text--accent-3 my-skill-icon`"></i>
         </v-col>
         <v-col sm="10" cols="12">
           <v-card class="pa-0 ma-0 work-font" flat color="transparent">
-            <h2 class="mb-1">{{ val.name }}</h2>
+            <h2 class="mb-1 blue--text text--accent-3">{{ val.name }}</h2>
             <p class="mobile-font">
               {{ val.desp }}
             </p>

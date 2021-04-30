@@ -1,12 +1,22 @@
 <template>
-  <v-card class="text-center goldman pa-5">
-    <h1 v-if="error.statusCode === 404">
-      {{ pageNotFound }}
-    </h1>
-    <h1 v-else>
-      {{ otherError }}
-    </h1>
-    <v-btn nuxt to="/" class="mt-4">Home page</v-btn>
+  <v-card
+    class="pa-4 d-flex justify-center align-center transparent"
+    style="min-height: 75vh"
+    flat
+  >
+    <div class="goldman text-center">
+      <h1 v-if="error.statusCode === 404" style="font-size: 32px">
+        {{ pageNotFound }}<br />
+        Page Not Found, Please go to the Home Page
+      </h1>
+      <h1 v-else style="font-size: 32px">
+        {{ otherError }}<br />
+        Unknown Error, Please go to the Home Page
+      </h1>
+      <v-btn nuxt to="/" class="mt-4" color="blue accent-3" large>
+        Home page
+      </v-btn>
+    </div>
   </v-card>
 </template>
 
@@ -16,22 +26,22 @@ export default {
   props: {
     error: {
       type: Object,
-      default: null,
-    },
+      default: null
+    }
   },
   data() {
     return {
       pageNotFound: '404 Not Found',
-      otherError: 'An error occurred',
+      otherError: 'An error occurred'
     }
   },
   head() {
     const title =
       this.error.statusCode === 404 ? this.pageNotFound : this.otherError
     return {
-      title,
+      title
     }
-  },
+  }
 }
 </script>
 

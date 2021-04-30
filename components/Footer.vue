@@ -3,26 +3,16 @@
     <v-row justify="center" no-gutters dense>
       <div
         :class="`py-3 flex-grow-1 text-center ${
-          !$vuetify.theme.dark ? 'grey lighten-2' : 'primary darken-2'
-        }`"
+          $vuetify.theme.dark ? 'blue-grey darken-3' : 'blue-grey lighten-5'
+        } `"
       >
         <Icons />
       </div>
-      <v-col
-        :class="`primary darken-3 text-center work-font ${
-          $vuetify.theme.dark && 'black--text'
-        }`"
-        cols="12"
-      >
-        <strong class="white--text">
+      <v-col class="blue accent-3 text-center work-font" cols="12">
           {{ new Date().getFullYear() }} —
-          <a
-            href="https://www.sushilkamble.live/"
-            class="text-decoration-none white--text"
-          >
+          <a href="#" class="text-decoration-none white--text goldman">
             sushilkamble.live
           </a>
-        </strong>
       </v-col>
     </v-row>
   </v-footer>
