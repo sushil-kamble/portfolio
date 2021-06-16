@@ -1,7 +1,17 @@
 <template>
-  <v-card max-width="600" class="pa-6 mx-auto my-8 transparent work-font">
-    <v-form autocomplete="off" name="google-sheet">
-      <h2 class="goldman mb-4 blue--text text--accent-3">Contact</h2>
+  <v-card max-width="600" class="pa-6 mx-auto my-3 transparent work-font">
+    <v-form autocomplete="off" name="google-sheet" class="goldman">
+      <h2 class="mb-4 blue--text text--accent-3">Contact</h2>
+      <v-btn
+        block
+        target="_blank"
+        color="blue accent-3"
+        href="mailto:iamsushil303@gmail.com?subject=Your%20Subject"
+      >
+        <i class="bx bx-mail-send mr-4"></i>
+        Mail me
+      </v-btn>
+      <h4 class="text-center mt-3">OR</h4>
       <v-text-field
         label="Name"
         v-model="name"
@@ -16,22 +26,24 @@
       ></v-text-field>
       <input type="hidden" :value="Date().toLocaleString()" name="timestamp" />
       <v-textarea label="Message" v-model="message" name="message"></v-textarea>
-      <v-btn
-        class="blue accent-3 goldman"
-        type="submit"
-        dark
-        @click.prevent="submitForm()"
-        :loading="loading"
-      >
-        Submit
-      </v-btn>
+      <div class="d-flex justify-space-between">
+        <v-btn
+          class="blue accent-3 goldman"
+          type="submit"
+          dark
+          @click.prevent="submitForm()"
+          :loading="loading"
+        >
+          Submit
+        </v-btn>
+        <span
+          :class="`pa-2 rounded white--text ${feedback[1]}`"
+          v-if="feedback.length > 1"
+        >
+          {{ feedback[0] }}
+        </span>
+      </div>
     </v-form>
-    <p
-      :class="`mt-4 pa-3 white--text ${feedback[1]}`"
-      v-if="feedback.length > 1"
-    >
-      {{ feedback[0] }}
-    </p>
   </v-card>
 </template>
 

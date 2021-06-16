@@ -1,5 +1,3 @@
-import colors from 'vuetify/es5/util/colors'
-
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -63,11 +61,14 @@ export default {
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
-    defaultAssets: false
+    defaultAssets: false,
+    treeShake: true,
+    rtl: false
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    transpile: []
+    transpile: [],
+    extractCSS: true
   }
 }

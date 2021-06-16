@@ -15,7 +15,12 @@
 export default {
   data() {
     return {
-      skills: ['Computer Engineer', 'Web Developer', 'Python Enthusiast']
+      skills: [
+        'Computer Engineer',
+        'Web Developer',
+        'Python Enthusiast',
+        'Problem Solver'
+      ]
     }
   }
 }

@@ -5,11 +5,11 @@
         MY SKILLS
       </h1>
       <v-divider class="blue accent-3 mb-2"></v-divider>
-      <Loading :height="80" v-if="$fetchState.pending" />
+      <Loading :height="88" v-if="$fetchState.pending" />
       <div v-else>
         <v-chip-group class="work-font" column>
           <v-chip
-            v-for="(tag, i) in tags"
+            v-for="(tag, i) in skillData.tags"
             :key="i"
             class="my-text-center"
             label
@@ -24,8 +24,11 @@
       </div>
 
       <v-divider class="blue accent-3 my-2"></v-divider>
-      <SkillsRow name="Favourites" :iter="favTech" />
-      <SkillsRow name="Working On" :iter="workOn" />
+      <Loading :height="200" :size="50" v-if="$fetchState.pending" />
+      <div v-else>
+        <SkillsRow name="Favourites" :iter="skillData.specialSkills.fav" />
+        <SkillsRow name="Working On" :iter="skillData.specialSkills.working" />
+      </div>
     </v-card>
   </v-container>
 </template>
@@ -41,49 +44,10 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ]
   },
-  data() {
-    return {
-      tags: [],
-      favTech: [
-        {
-          name: 'Vue',
-          icon: 'bx bxl-vuejs',
-          desp:
-            'Getting better a vue.js every single day, Have a in-depth knowledge of vue framework as I have done few interesting projects using the same. I am quite familiar with Vuex, Vue Router & also Nuxt.js.'
-        },
-        {
-          name: 'Firebase',
-          icon: 'bx bxl-firebase',
-          desp:
-            'Done many projects using Firebase Authentication Service, Realtime DB, Cloud Firestore. Have a good knowledge about the query structure of Firestore.'
-        },
-        {
-          name: 'Django',
-          icon: 'bx bxl-django',
-          desp:
-            'Python being my most favourite language, pushed me towards django framework. Have a good hold over authentication, CRUD operations, jinja templating etc.'
-        }
-      ],
-      workOn: [
-        {
-          name: 'DS ALGO',
-          icon: 'bx bxs-data',
-          desp:
-            'Brushing up my Data Structures and Algorithms skills by frequently solving problems on HackerRank and HackerEarth.'
-        },
-        {
-          name: 'Dev Ops',
-          icon: 'bx bxl-kubernetes',
-          desp:
-            'Signed in for Google Cloud Training to learn Kubernetes and get a hands on experience.'
-        }
-      ]
-    }
-  },
   fetchOnServer: false,
   async fetch() {
-    this.tags = await fetch(
-      'https://sushil-kamble-default-rtdb.firebaseio.com/tags.json'
+    this.skillData = await fetch(
+      'https://sushil-kamble-default-rtdb.firebaseio.com/skills.json'
     ).then((res) => res.json())
   }
 }

@@ -3,18 +3,17 @@
     <div class="my-text-center goldman">
       <h1 class="i-am-sushil">
         <span class="d-block" style="font-size: 24px">Hi there,</span>
-        I'm
+        I am
         <span class="blue--text text--accent-3">Sushil Kamble</span>
       </h1>
       <h1>
-        <span class="display-block-sm mobile-font">I am</span>
+        <span class="display-block-sm mobile-font">I am a</span>
         <Typing />
       </h1>
 
       <div class="my-6">
         <v-btn
           color="blue accent-3"
-          large
           dark
           elevation="4"
           href="https://drive.google.com/file/d/1y7k-psiq7QVYnCb_2LhF-gaRSyhD7lX1/view?usp=sharing"
@@ -26,7 +25,6 @@
         <v-btn
           color="blue-grey darken-3"
           class="ml-2"
-          large
           nuxt
           elevation="4"
           to="/contact"
