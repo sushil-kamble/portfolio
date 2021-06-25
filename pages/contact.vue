@@ -5,13 +5,14 @@
       <v-btn
         block
         target="_blank"
-        color="blue accent-3"
+        color="blue accent-3 "
+        class="white--text"
         href="mailto:iamsushil303@gmail.com?subject=Your%20Subject"
       >
         <i class="bx bx-mail-send mr-4"></i>
         Mail me
       </v-btn>
-      <h4 class="text-center mt-3">OR</h4>
+      <h4 class="text-center mt-3 blue--text blue--text text--accent-3">OR</h4>
       <v-text-field
         label="Name"
         v-model="name"

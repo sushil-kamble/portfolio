@@ -29,9 +29,6 @@
         <v-btn text active-class="active-link" to="/" nuxt>
           <span>Home </span>
         </v-btn>
-        <v-btn text active-class="active-link" to="/skills" nuxt>
-          <span> Skills </span>
-        </v-btn>
         <v-btn text active-class="active-link" to="/projects" nuxt>
           <span> Projects </span>
         </v-btn>

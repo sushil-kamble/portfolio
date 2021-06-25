@@ -1,6 +1,6 @@
 <template>
   <div class="sm-up-px4 my-margin-bottom-large">
-    <h1 class="goldman blue--text text--accent-3 my-text-center">
+    <h1 class="goldman blue--text text--accent-3 my-text-center big-font">
       Certificates
     </h1>
     <v-divider class="blue accent-3 mb-4"></v-divider>

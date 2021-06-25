@@ -22,6 +22,9 @@ body::-webkit-scrollbar-thumb {
 .icon-font {
   font-size: 28px;
 }
+.big-font {
+  font-size: 30px;
+}
 .page-enter-active,
 .page-leave-active {
   transition: opacity 0.3s;

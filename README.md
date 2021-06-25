@@ -10,8 +10,7 @@
 <p>Welcome to my GitHub, Hope you are having a wonderful day!</p>
 <p>I'm Sushil Kamble, a passionate self-taught FullStack web developer from India.</p>
 
-- 🔭 I’m currently working on data structures and algorithms
-- 🌱 I’m currently learning Flutter
+- 🔭 I’m currently brushing up my data structures and algorithm skills.
 - 👯 I’m looking to collaborate on React/Vue Project
 
 <h4>Languages and tools</h4>

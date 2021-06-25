@@ -16,8 +16,12 @@
           <v-img
             :src="`${project.img}`"
             :aspect-ratio="3 / 2"
-            gradient="60deg, rgba(44, 44, 44, 0.9) 38%, rgba(22, 22, 22, 0.4) 100%"
-            class="pa-4 white--text rounded-lg mobile-font elevation-10"
+            :gradient="
+              $vuetify.theme.dark
+                ? '60deg, rgba(44, 44, 44, 0.9) 38%, rgba(22, 22, 22, 0.4) 100%'
+                : '60deg, rgba(255,255,255,0.9) 38%, rgba(201,201,201,0.4) 100%'
+            "
+            class="pa-4 rounded-lg mobile-font elevation-10"
           >
             <h2 class="goldman blue--text text--accent-3">
               {{ project.name }}

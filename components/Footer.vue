@@ -8,11 +8,11 @@
       >
         <Icons />
       </div>
-      <v-col class="blue accent-3 text-center work-font" cols="12">
-          {{ new Date().getFullYear() }} —
-          <a href="#" class="text-decoration-none white--text goldman">
-            sushilkamble.live
-          </a>
+      <v-col class="blue accent-3 text-center work-font white--text" cols="12">
+        {{ new Date().getFullYear() }} —
+        <a href="#" class="text-decoration-none white--text goldman">
+          sushilkamble.live
+        </a>
       </v-col>
     </v-row>
   </v-footer>

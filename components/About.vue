@@ -1,9 +1,6 @@
 <template>
   <section class="sm-up-px4 my-margin-bottom-large">
-    <h1
-      class="goldman blue--text text--accent-3 my-text-center"
-      style="font-size: 35px"
-    >
+    <h1 class="goldman blue--text text--accent-3 my-text-center big-font">
       About Me
     </h1>
     <v-divider class="blue accent-3"></v-divider>
@@ -14,11 +11,11 @@
             I am a computer engineer, who is filled with enthusiasm about web
             development, building projects & learning new technologies. I love
             developing ideas that come to my mind. Learning new technologies is
-            my hobby along with playing games and watching movies. I keep myself
-            up-to-date with the new trends going around the world. Passionate
-            about project planning and development. I have pleasant knowledge
-            about frontend and backend technologies as I have developed few
-            interesting projects using them.
+            my hobby along with playing games and watching web series and
+            movies. I keep myself up-to-date with the new trends going around
+            the world. Passionate about project planning and development. I have
+            pleasant knowledge about frontend and backend technologies as I have
+            developed few interesting projects using them.
           </h3>
           <br />
           <div
@@ -39,7 +36,7 @@
           <v-card flat class="d-flex justify-end align-center">
             <v-img
               :aspect-ratio="8 / 7"
-              max-height="360"
+              max-height="280"
               src="img/hero.jpg"
               lazy-src="img/hero_com.jpg"
             ></v-img>

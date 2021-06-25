@@ -1,6 +1,8 @@
 <template>
   <div class="sm-up-px4 my-margin-bottom-large">
-    <h1 class="goldman blue--text text--accent-3 my-text-center">Projects</h1>
+    <h1 class="goldman blue--text text--accent-3 my-text-center big-font">
+      Projects
+    </h1>
     <v-divider class="blue accent-3 mb-4"></v-divider>
     <Loading v-if="$fetchState.pending" />
     <Grid :items="projects" :project="true" v-else />
