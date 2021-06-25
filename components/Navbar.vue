@@ -63,10 +63,6 @@
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item>
 
-          <v-list-item nuxt to="/skills" active-class="active-link">
-            <v-list-item-title>Skills</v-list-item-title>
-          </v-list-item>
-
           <v-list-item nuxt to="/projects" active-class="active-link">
             <v-list-item-title>Projects</v-list-item-title>
           </v-list-item>

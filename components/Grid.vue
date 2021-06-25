@@ -11,8 +11,11 @@
           :src="project ? item.img : item.link"
           aspect-ratio="1"
           class="grid-height"
-          dark
-          gradient="180deg, rgba(255,255,255,0.1) 0%, rgba(34,39,46,0.7) 85%"
+          :gradient="
+            $vuetify.theme.dark
+              ? '180deg, rgba(255,255,255,0.05) 0%, rgba(34,39,46,0.8) 85%'
+              : '180deg, rgba(255,255,255,0.05) 0%, rgba(244,244,244,0.9) 85%'
+          "
         >
           <v-row
             class="fill-height goldman text-center text-overlay ma-0"
