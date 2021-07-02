@@ -8,7 +8,9 @@
       </h1>
       <h1>
         <span class="display-block-sm mobile-font">I am a</span>
-        <Typing />
+        <span class="mobile-font blue--text text--accent-3">
+          Computer Engineer
+        </span>
       </h1>
 
       <div class="my-6">
