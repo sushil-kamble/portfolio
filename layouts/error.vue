@@ -13,7 +13,7 @@
         {{ otherError }}<br />
         Unknown Error, Please go to the Home Page
       </h1>
-      <v-btn nuxt to="/" class="mt-4" color="blue accent-3" large>
+      <v-btn nuxt to="/" class="mt-3" color="blue accent-3" large>
         Home page
       </v-btn>
     </div>
