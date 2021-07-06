@@ -24,7 +24,7 @@ export default {
       },
       'introduction-to-data-science': {
         id: 2,
-        link: 'https://firebasestorage.googleapis.com/v0/b/sushil-kamble.appspot.com/o/certificates%2Fapplied_machine_learning_in_python.jpg?alt=media',
+        link: 'https://firebasestorage.googleapis.com/v0/b/sushil-kamble.appspot.com/o/certificates%2Fintro_to_data_science.jpg?alt=media&token=04001281-0e7c-46a1-8798-c6a0b9f47143',
         name: 'Introduction to Data Science'
       },
       'neural-network-and-deep-learning': {
